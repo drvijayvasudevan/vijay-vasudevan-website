@@ -73,4 +73,14 @@ footer {
   letter-spacing: 0.5px;
 }
 
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  background: #1a1c22;
+  border: 1px solid #333;
+  color: #e6e6e6;
+  font-family: inherit;
+}
+
 
