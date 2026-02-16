@@ -22,23 +22,23 @@
   <h1>Contact</h1>
 
   <p>
-    For research collaboration, speaking invitations, media inquiries, or other professional matters,
+    For research collaboration, speaking engagements, media inquiries, or professional correspondence,
     please complete the form below.
   </p>
 
   <form action="https://formspree.io/f/mlgwngqj" method="POST">
 
-    <label>Name</label>
-    <input type="text" name="name" required>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
 
-    <label>Email</label>
-    <input type="email" name="email" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
 
-    <label>Institution / Organization</label>
-    <input type="text" name="institution">
+    <label for="institution">Institution / Organization</label>
+    <input type="text" id="institution" name="institution">
 
-    <label>Reason for Inquiry</label>
-    <select name="reason" required>
+    <label for="reason">Reason for Inquiry</label>
+    <select id="reason" name="reason" required>
       <option value="">Select one</option>
       <option>Research Collaboration</option>
       <option>Speaking Engagement</option>
@@ -48,8 +48,8 @@
       <option>Other</option>
     </select>
 
-    <label>Message</label>
-    <textarea name="message" rows="6" required></textarea>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
 
     <button type="submit">Send Message</button>
 
