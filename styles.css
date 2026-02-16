@@ -83,4 +83,48 @@ select {
   font-family: inherit;
 }
 
+form {
+  max-width: 600px;
+  margin-top: 40px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  letter-spacing: 0.3px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 25px;
+  background: #1a1c22;
+  border: 1px solid #333;
+  color: #e6e6e6;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #ffffff;
+}
+
+button {
+  padding: 12px 26px;
+  border: 1px solid #888;
+  background: transparent;
+  color: #e6e6e6;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #ffffff;
+  color: #0f1115;
+}
 
