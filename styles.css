@@ -128,3 +128,8 @@ button:hover {
   color: #0f1115;
 }
 
+.hero img {
+  width: 180px;
+  height: auto;
+  border-radius: 6px;
+}
