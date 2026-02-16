@@ -128,8 +128,18 @@ button:hover {
   color: #0f1115;
 }
 
-.hero img {
+.hero-centered {
+  text-align: center;
+}
+
+.hero-centered img {
   width: 180px;
   height: auto;
   border-radius: 6px;
+  margin: 25px 0;
 }
+
+.hero-centered h1 {
+  margin-bottom: 10px;
+}
+
