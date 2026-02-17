@@ -144,4 +144,28 @@ button:hover {
 .hero-centered h1 {
   margin-bottom: 10px;
 }
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+
+  .container {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .hero-centered img {
+    width: 150px !important;
+  }
+
+}
+
 
