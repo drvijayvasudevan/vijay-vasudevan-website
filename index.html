@@ -9,6 +9,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+<style>
+.bsky-feed-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.bsky-feed-info h2 { margin-bottom: 0.4rem; }
+.bsky-feed-wrap { max-width: 560px; }
+.bsky-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #0085ff;
+  color: white;
+  transition: background 0.2s;
+}
+.bsky-follow-btn:hover { background: #006dd6; }
+@media (max-width: 768px) {
+  .bsky-feed-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
@@ -71,7 +99,7 @@
 <!-- ═══ ABOUT PREVIEW ═══ -->
 <section class="section section--white">
   <div class="container">
-    <div class="about-preview-grid fade-in">
+    <div class="about-preview-grid fade-in" style="display:block;max-width:720px;">
       <div class="about-text">
         <div class="section-label">About</div>
         <h2 class="section-title">Research That Centers People</h2>
@@ -79,36 +107,6 @@
         <p>I am a public health researcher specializing in disability studies, autism epidemiology, health equity, and data science applications in population health. My work integrates administrative data, survey data, and policy evaluation to improve health outcomes for autistic individuals and people with disabilities.</p>
         <p>As Director of Data Science &amp; Evaluation at Autism Speaks, I lead national data initiatives including the <em>Autism by the Numbers</em> project and the <em>Autism FIT</em> health promotion program. At Drexel University, I teach and mentor the next generation of public health professionals.</p>
         <a href="about.html" class="btn btn-outline-dark" style="margin-top:0.5rem;">Read More →</a>
-      </div>
-      <div class="highlight-stack">
-        <div class="highlight-card">
-          <div class="hl-icon">📈</div>
-          <div class="hl-body">
-            <h3 class="hl-body-title">Autism by the Numbers</h3>
-            <p>National data project analyzing trends in autism prevalence, services, and outcomes ($450K, Autism Speaks)</p>
-          </div>
-        </div>
-        <div class="highlight-card">
-          <div class="hl-icon">🏃</div>
-          <div class="hl-body">
-            <h3 class="hl-body-title">Autism FIT</h3>
-            <p>Adapting evidence-based health promotion programs for autistic individuals ($75K, Autism Speaks)</p>
-          </div>
-        </div>
-        <div class="highlight-card">
-          <div class="hl-icon">💉</div>
-          <div class="hl-body">
-            <h3 class="hl-body-title">COVID-19 Vaccine Outreach</h3>
-            <p>Built local vaccine outreach for the autistic community in Florida (CDC-funded, $50K)</p>
-          </div>
-        </div>
-        <div class="highlight-card">
-          <div class="hl-icon">📝</div>
-          <div class="hl-body">
-            <h3 class="hl-body-title">Peer-Reviewed Scholar</h3>
-            <p>Published in JAMA Pediatrics, Disability and Health Journal, and more</p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -167,6 +165,26 @@
     <div class="services-actions">
       <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
       <a href="https://www.linkedin.com/in/vijay-vasudevan-phd/" class="btn btn-outline" target="_blank" rel="noopener" aria-label="Connect on LinkedIn (opens in new window)">Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BLUESKY FEED ═══ -->
+<section class="section section--cream">
+  <div class="container fade-in">
+    <div class="bsky-feed-grid">
+      <div class="bsky-feed-info">
+        <div class="section-label">Latest Updates</div>
+        <h2 class="section-title" style="color:var(--text-primary)">Follow Along on Bluesky</h2>
+        <p style="font-size:0.92rem;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">Conference live-posts, research commentary, and quick takes on autism data science and disability health policy. Follow for real-time updates from the field.</p>
+        <a href="https://bsky.app/profile/vijayvasudevan.bsky.social" target="_blank" rel="noopener" class="bsky-follow-btn" aria-label="Follow Vijay Vasudevan on Bluesky (opens in new window)">
+          <svg viewBox="0 0 568 501" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18"><path fill="white" d="M123.121 33.664C188.241 82.553 258.281 181.68 284 234.873c25.719-53.192 95.759-152.32 160.879-201.21C491.866-1.611 568-28.906 568 49.845c0 17.746-10.155 149.16-16.111 170.52-20.703 74.396-96.144 93.371-163.9 81.86 117.255 19.963 147.063 85.975 82.573 151.981C393.165 527.652 321.667 463.256 291.582 413.9c-5.09-8.327-7.477-12.2-7.582-8.845-.105-3.356-2.492.518-7.582 8.845-30.085 49.357-101.583 113.753-179.08 40.286-64.49-65.006-34.682-132.018 82.573-151.981-67.756 11.511-143.197-7.464-163.9-81.86C10.155 198.005 0 67.591 0 49.845 0-28.906 76.135-1.612 123.121 33.664Z"/></svg>
+          Follow @vijayvasudevan
+        </a>
+      </div>
+      <div class="bsky-feed-wrap">
+        <bsky-embed username="vijayvasudevan.bsky.social" mode="light" limit="5"></bsky-embed>
+      </div>
     </div>
   </div>
 </section>
