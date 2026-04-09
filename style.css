@@ -1140,3 +1140,175 @@ a[target="_blank"]::after {
     color: rgba(255,255,255,0.75);
   }
 }
+/*
+  ============================================================
+  MOBILE NAV FIX  —  drvijayvasudevan.com
+  ============================================================
+  Add these rules to the bottom of your style.css.
+  They override the desktop nav on small screens and wire up
+  the hamburger button (nav-toggle) that is already in your HTML.
+  ============================================================
+*/
+
+/* ── Hide desktop links / show hamburger on mobile ── */
+@media (max-width: 768px) {
+
+  /* Prevent the whole page from scrolling sideways */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Nav container: don't let it grow wider than the viewport */
+  .nav-inner {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    position: relative;
+  }
+
+  /* Hide the horizontal link row */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;          /* drop below the nav bar */
+    left: 0;
+    right: 0;
+    background: #0f2336;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 0.5rem 0 1rem;
+    z-index: 200;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  /* When the menu is open (JS toggles this class) */
+  .nav-menu.open {
+    display: flex;
+  }
+
+  /* Stack each link full-width */
+  .nav-menu a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .nav-menu a:last-child { border-bottom: none; }
+  .nav-menu a:hover { background: rgba(255,255,255,0.08) !important; color: #fff !important; }
+
+  /* CTA link in mobile menu */
+  .nav-cta-link {
+    margin: 0.5rem 1.5rem 0 !important;
+    width: calc(100% - 3rem) !important;
+    text-align: center;
+    border-radius: 6px !important;
+    padding: 0.65rem 1rem !important;
+  }
+
+  /* Show the hamburger button */
+  .nav-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .nav-toggle:hover { background: rgba(255,255,255,0.08); }
+
+  /* The three bars */
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* Animate into X when open */
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+}
+
+/* ── Desktop: make sure toggle is hidden ── */
+@media (min-width: 769px) {
+  .nav-toggle { display: none !important; }
+  .nav-menu   { display: flex !important; }
+}
+
+/* ── Footer overflow fix (portrait mobile) ── */
+@media (max-width: 768px) {
+
+  /* Constrain the footer container */
+  .site-footer .container,
+  .footer-inner {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Stack copyright above links instead of side by side */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Wrap footer links onto multiple lines instead of one long row */
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  /* ── General fix: any element wider than the screen ── */
+  /* Catches section backgrounds, hero sections, CTA banners etc. */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Prevent any individual element from punching out */
+  img, video, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* CTA / ready-to-work section */
+  .cta-section,
+  .cta-banner,
+  [class*="cta"] {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* Any full-bleed section */
+  section, article, header, footer, main {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
