@@ -1338,3 +1338,12 @@ a[target="_blank"]::after {
     transform: none !important;
   }
 }
+/* 🔧 HARD FIX: force hamburger lines visible */
+.nav-toggle span {
+  display: block !important;
+  width: 22px !important;
+  height: 3px !important;
+  background: #2a9d8f !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
