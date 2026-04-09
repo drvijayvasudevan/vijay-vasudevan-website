@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SJX97K22GY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SJX97K22GY');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locked Out of the Ballot Box: How Voting Restrictions Threaten Florida's Disabled Adults | Blog | Vijay Vasudevan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../blog.css">
+
+<!-- Post-specific extras (stat boxes, date grid, accom cards, hotline) -->
+<style>
+  /* ── Dark header overrides ── */
+  :root {
+    --header-bg:  #0f2336;
+    --teal:       #2a9d8f;
+    --cream:      #faf7f4;
+  }
+  body { background: var(--cream); }
+  .site-nav { background: var(--header-bg) !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+  .nav-brand-name { color: #fff !important; }
+  .nav-brand-sub { color: var(--teal) !important; font-size: .68rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  .nav-menu a { color: rgba(255,255,255,0.65) !important; }
+  .nav-menu a:hover { color: #fff !important; background: rgba(255,255,255,0.08) !important; }
+  .nav-menu a.active { color: #fff !important; }
+  .nav-cta-link { background: var(--teal) !important; color: #fff !important; }
+  .post-header { background: var(--header-bg); border-bottom: none; }
+  .post-tag { background: var(--teal) !important; color: #fff !important; font-weight: 700 !important; }
+  .post-meta-date { color: #a8c0d0 !important; }
+  .post-header h1 { color: #fff !important; }
+  .post-meta-bottom { color: #a8c0d0 !important; }
+  .post-author-name { color: #fff !important; }
+  .post-author-avatar { background: var(--teal) !important; }
+
+  /* ── Stat row ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border, #e5e7eb);
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+  .stat-box {
+    background: #fff;
+    padding: 1.2rem 1rem;
+  }
+  .stat-number {
+    display: block;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+  .stat-label {
+    font-size: 0.73rem;
+    color: #6b7280;
+    line-height: 1.45;
+  }
+
+  /* ── Org sub-heading ── */
+  .org-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #2563eb;
+    margin-top: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── FL info box ── */
+  .fl-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    padding: 1.75rem 1.75rem 1.25rem;
+    margin: 2.5rem 0;
+  }
+  .fl-box-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #2563eb;
+    margin-bottom: 0.3rem;
+  }
+  .fl-box h2 {
+    font-size: 1.25rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .fl-box p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .fl-box-section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #2563eb;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* ── Dates grid ── */
+  .dates-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #bfdbfe;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+  }
+  .date-cell {
+    background: #fff;
+    padding: 0.75rem 0.9rem;
+  }
+  .date-cell-lbl {
+    font-size: 0.71rem;
+    color: #6b7280;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    line-height: 1.3;
+  }
+  .date-cell-val {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    line-height: 1.2;
+  }
+  .date-cell-val.urgent { color: #b91c1c; }
+  .date-cell-note {
+    font-size: 0.67rem;
+    color: #9ca3af;
+    margin-top: 0.15rem;
+    line-height: 1.35;
+  }
+
+  /* ── Accommodation cards ── */
+  .accom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+  .accom-card {
+    background: #fff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 0.9rem 1rem;
+  }
+  .accom-icon { font-size: 1.05rem; margin-bottom: 0.4rem; }
+  .accom-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.3rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .accom-card p {
+    font-size: 0.77rem !important;
+    color: #6b7280 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ── Hotline ── */
+  .hotline {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    display: flex;
+    gap: 0.75rem;
+    margin: 0.75rem 0 1.1rem;
+  }
+  .hotline-icon { font-size: 1.05rem; flex-shrink: 0; }
+  .hotline strong {
+    display: block;
+    font-size: 0.8rem;
+    color: #b91c1c;
+    margin-bottom: 0.15rem;
+  }
+  .hotline p {
+    font-size: 0.78rem !important;
+    color: #6b7280 !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+  }
+  .hotline a { color: #b91c1c; }
+
+  .fl-note {
+    font-size: 0.74rem !important;
+    color: #6b7280 !important;
+    border-top: 1px solid #bfdbfe;
+    padding-top: 0.75rem;
+    margin-top: 0.25rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* ── Action list ── */
+  .action-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 1.5rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  .action-list li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 0.75rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.75;
+  }
+  .action-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #2563eb;
+    padding-top: 0.25rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .action-text strong {
+    color: #111827;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+
+  @media (max-width: 600px) {
+    .stat-row,
+    .dates-grid,
+    .accom-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" role="navigation" aria-label="Main">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Vijay Vasudevan — Home">
+      <span class="nav-brand-name">Vijay Vasudevan</span>
+      <span class="nav-brand-sub">Public Health &amp; Data Science</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="/">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../research.html">Research</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../grants.html">Grants</a>
+      <a href="../leadership.html">Leadership</a>
+      <a href="../contact.html" class="nav-cta-link">Get in Touch →</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- POST HEADER -->
+<header class="post-header">
+  <div class="container">
+    <div class="post-meta-top">
+      <span class="post-tag">Disability Rights</span>
+      <span class="post-tag">Voting Access</span>
+      <span class="post-meta-date">April 8, 2026</span>
+    </div>
+    <h1>Locked Out of the Ballot Box: How Voting Restrictions Threaten Florida's Disabled Adults</h1>
+    <div class="post-meta-bottom">
+      <div class="post-author">
+        <div class="post-author-avatar">VV</div>
+        <span class="post-author-name">Vijay Vasudevan, Ph.D., M.P.H.</span>
+      </div>
+      <span>14 min read</span>
+    </div>
+  </div>
+</header>
+
+<!-- POST BODY -->
+<article class="post-body fade-in">
+
+  <p>As Congress debates the SAVE America Act, millions of disabled voters — including nearly 3 million Floridians — face the prospect of losing their most fundamental democratic right. A broad coalition of national disability organizations has sounded the alarm. This post lays out what is at stake, what the research shows, what the advocates are saying, and what Florida voters with disabilities can do right now.</p>
+
+  <h2>A Right Already Under Siege</h2>
+
+  <p>Imagine navigating a wheelchair to your polling place, only to discover the entrance has no ramp. Or spending hours trying to gather a passport and birth certificate you've never needed before — documents you can't easily obtain because of a cognitive disability or because you've spent months hospitalized. For millions of Americans with disabilities, these are not hypotheticals. They are Election Day realities. And under proposed federal legislation, they could become much worse.</p>
+
+  <p>According to the CDC's Disability and Health Data System, approximately 13.5% of Florida's civilian non-institutionalized population — nearly 2.9 million people — live with a disability. Nationally, the CDC's 2022 Behavioral Risk Factor Surveillance System data found that more than one in four U.S. adults, over 70 million people, reported having a functional disability. These are not marginal voices. They are a defining constituency of American democracy.</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="stat-number">2.9M</span>
+      <span class="stat-label">Floridians living with a disability (CDC/ACS, 2022)</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">70M+</span>
+      <span class="stat-label">U.S. adults reporting a functional disability nationally</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">40.2M</span>
+      <span class="stat-label">Eligible voters with disabilities — nearly 1 in 6</span>
+    </div>
+  </div>
+
+  <p>Yet disabled voters already cast ballots at significantly lower rates than their non-disabled peers. According to a U.S. Election Assistance Commission report conducted by Rutgers University, nearly 69% of non-disabled people voted in 2020, compared to nearly 58% of disabled people. The gap exists not because of lack of interest, but because of persistent, systemic barriers: inaccessible polling locations, a lack of trained poll workers, and voting machines that are difficult or impossible for many disabled people to use.</p>
+
+  <p>A Government Accountability Office study found that 60% of polling places had barriers for voters with disabilities, and 65% had voting stations that were not set up to allow a private and independent vote. These are not footnotes in a policy debate. They are the lived experience of millions of Americans every election cycle.</p>
+
+  <h2>What the SAVE America Act Would Do</h2>
+
+  <p>The Safeguard American Voter Eligibility Act — known as the SAVE Act or SAVE America Act (H.R. 7296) — passed the U.S. House of Representatives on February 11, 2026. It requires all voters to present documentary proof of U.S. citizenship when registering to vote, when voting by mail, and when voting in person. For most Americans, that means producing a passport or certified birth certificate — documents that an estimated 21 million eligible U.S. citizens do not have readily available.</p>
+
+  <p>For disabled voters, the consequences would be particularly severe. Research from the Center for Democracy and Civic Engagement at the University of Maryland found that 20% of people who self-identify as having a disability do not have a current driver's license, compared to just 6% of non-disabled people. An additional 9% have a license that does not reflect their current name and address. Obtaining any alternative form of identification adds burdensome and often insurmountable steps for people managing health conditions, limited mobility, or cognitive disabilities.</p>
+
+  <p>The bill would also severely restrict mail-in voting, requiring documented proof of citizenship when both applying for and returning an absentee ballot. In 2020, over half of all disabled voters cast their ballots by mail. This is not a minor inconvenience — it is a potential election-day elimination for some of the most vulnerable voters in the country.</p>
+
+  <h2>A Unified Disability Community Speaks Out</h2>
+
+  <p>What is striking about the response to the SAVE America Act is not just its breadth — but its unity. Virtually every major national disability organization has condemned this legislation, describing a community already fighting for basic democratic access now facing an existential threat to that access.</p>
+
+  <p class="org-label">National Coalition on Accessible Voting (NCAV)</p>
+
+  <p>The NCAV — a coalition that includes The Arc, ASAN, NCIL, NDRN, and dozens of other organizations — issued the broadest joint statement opposing the SAVE Act, the SAVE America Act, and the MEGA Act together. They put the stakes in stark numerical terms: 40.2 million eligible voters with disabilities, representing nearly one-sixth of the total eligible voting population.</p>
+
+  <blockquote>"The SAVE Act is duplicative, dangerous, and discriminatory. There are already laws in place that prohibit noncitizens from voting. Legislation like the SAVE Act only serves to discourage participation in the democratic process and disenfranchises voters in multi-marginalized communities, including the disability community." <cite>— National Coalition on Accessible Voting (NCAV)</cite></blockquote>
+
+  <p class="org-label">American Association of People with Disabilities (AAPD)</p>
+
+  <p>AAPD condemned the legislation the day after the House vote, on February 13, 2026, noting that disabled voters are already three times more likely to face difficulties when voting than non-disabled voters.</p>
+
+  <blockquote>"Voting is a fundamental right, not a privilege. The SAVE America Act moves our country away from its foundational principles and will make it more difficult for disabled people, rural, low-income, and voters of color to participate. Barriers to documentation and restrictive voting rules are not neutral." <cite>— Alexia Kemerling, Director of Accessible Democracy, AAPD</cite></blockquote>
+
+  <p>AAPD also emphasized the critical role mail voting plays for the disability community. In 2020, over half of all disabled voters cast their ballots by mail. States that offer expanded mail voting options have seen notably higher turnout among disabled voters — gains that the SAVE America Act would directly threaten.</p>
+
+  <p class="org-label">National Disability Rights Network (NDRN)</p>
+
+  <p>NDRN, the largest provider of legally based advocacy services for people with disabilities in the U.S., joined recovery advocates in April 2026 to call on Congress to reject the bill. Deputy Director for Public Policy Eric Buehlmann offered one of the most historically pointed critiques of the legislation:</p>
+
+  <blockquote>"The SAVE America Act is an unnecessary and dangerous step backward, echoing tactics used during the Jim Crow era to disenfranchise our most vulnerable communities." <cite>— Eric Buehlmann, Deputy Director for Public Policy, NDRN</cite></blockquote>
+
+  <p class="org-label">The Arc of the United States</p>
+
+  <p>The Arc gave voice to individual disabled voters: a woman with muscular dystrophy who needs mail options when her symptoms flare; a man with Chronic Inflammatory Demyelinating Polyneuropathy who spent six months hospitalized and for whom vote-by-mail was his only option; a mother of an autistic daughter with dyslexia and dysgraphia who needs more time and a familiar routine to cast her ballot.</p>
+
+  <blockquote>"I think it really boils down to whether people believe that disabled people or any people from marginalized groups are deserving of the full benefits of democracy. We're all interconnected. And I think that's the promise of democracy — we all get to enjoy the same basic human rights and privileges as everyone else." <cite>— Lydia, voter with muscular dystrophy, speaking to The Arc</cite></blockquote>
+
+  <p class="org-label">Autistic Self Advocacy Network (ASAN)</p>
+
+  <p>ASAN published a plain-language explainer in February 2026 — co-written with VoteRiders and AAPD REV UP — specifically designed for autistic and other disabled readers. Their March 2026 update continued mobilizing their community with a senator call script. ASAN's framing is important: this is not a partisan issue. A Pew Research Center study shows that the political party affiliation of disabled voters mirrors that of non-disabled voters.</p>
+
+  <p class="org-label">National Council on Independent Living (NCIL)</p>
+
+  <p>NCIL, the longest-running national cross-disability grassroots organization in the U.S., maintains a Voting Rights Subcommittee and partners with nonpartisan VoteRiders to spread state-specific voter ID information to people with disabilities. NCIL is a signatory to the NCAV's joint letter and continues urging its national network of Centers for Independent Living to mobilize disabled voters.</p>
+
+  <h2>Florida: A State With Particular Stakes</h2>
+
+  <p>Florida is not a bystander in this debate — it is already on the front lines. Governor Ron DeSantis signed Florida's own version of the SAVE Act. The law requires that the citizenship of every already-registered voter be verified against federal and state records, and voters flagged as potential non-citizens must provide proof of citizenship to remain registered. A coalition of voting rights organizations filed a lawsuit seeking to block it. Its major provisions are set to take effect after the 2026 midterms.</p>
+
+  <p>The five counties with the largest disabled populations in Florida are Miami-Dade, Broward, Palm Beach, Hillsborough, and Orange — some of the state's most politically significant counties. Florida's large elderly population adds further urgency: the CDC notes that 44% of people aged 65 and older report a disability, and Florida has one of the nation's highest concentrations of older adults.</p>
+
+  <h2>What <em>Time</em> Magazine's Coverage Has Documented</h2>
+
+  <p>Writing in <em>Time</em> in March 2026, disability justice advocate Naomi Hess described voting for the first time on her 18th birthday — navigating her wheelchair through a community center in Maryland with a sense of pride. But she was clear that not all disabled people share such an experience, and that the SAVE America Act threatens to deepen the divide. A separate <em>Time</em> report in April 2026 documented that Florida, Mississippi, South Dakota, and Utah have all signed their own versions of the legislation, and the Trump administration's March 31 executive order — now in litigation — would direct the U.S. Postal Service to refuse mail ballots from voters not on a federally created list.</p>
+
+  <h2>The Law Is Already on Disabled Voters' Side — For Now</h2>
+
+  <p>Multiple federal laws protect the voting rights of people with disabilities: the Americans with Disabilities Act, the Help America Vote Act, the Voting Rights Act, and the National Voter Registration Act. Courts have repeatedly struck down documentary proof of citizenship requirements. In Kansas, such a law prevented roughly 31,000 eligible citizens — 12% of all applicants — from registering to vote, far more than the noncitizens it targeted, and was later struck down.</p>
+
+  <p>But these protections are not self-executing. The SAVE America Act would give the Election Assistance Commission just 10 days to issue guidance and provides no funding for states to implement the required changes — a rushed timeline that creates serious risks for disabled voters who depend on carefully administered, accessible systems.</p>
+
+  <!-- FLORIDA VOTER INFO BOX -->
+  <div class="fl-box">
+    <p class="fl-box-label">🗳 Florida Voter Information</p>
+    <h2>Key Dates, Rights &amp; Accommodations for Florida Voters with Disabilities</h2>
+    <p>If you are a Florida voter with a disability, here is what you need to know for the 2026 elections. Knowing your rights and your deadlines is the first step.</p>
+
+    <p class="fl-box-section-label">2026 Election Deadlines</p>
+    <div class="dates-grid">
+      <div class="date-cell">
+        <div class="date-cell-lbl">Primary Election Day</div>
+        <div class="date-cell-val">August 18, 2026</div>
+        <div class="date-cell-note">Polls open 7 AM – 7 PM</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-cell-lbl">General Election Day</div>
+        <div class="date-cell-val">November 3, 2026</div>
+        <div class="date-cell-note">Polls open 7 AM – 7 PM</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-cell-lbl">Primary Registration Deadline</div>
+        <div class="date-cell-val urgent">July 20, 2026</div>
+        <div class="date-cell-note">Also deadline for party changes</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-cell-lbl">General Registration Deadline</div>
+        <div class="date-cell-val urgent">October 5, 2026</div>
+        <div class="date-cell-note">29 days before Election Day</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-cell-lbl">Mail Ballot Request — Primary</div>
+        <div class="date-cell-val">August 6, 2026</div>
+        <div class="date-cell-note">By 5 PM; ballot due by 7 PM Election Day</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-cell-lbl">Mail Ballot Request — General</div>
+        <div class="date-cell-val">October 22, 2026</div>
+        <div class="date-cell-note">By 5 PM; ballot due by 7 PM Election Day</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-cell-lbl">Early Voting — Primary</div>
+        <div class="date-cell-val">Aug 8 – 15, 2026</div>
+        <div class="date-cell-note">Mandatory period; counties may offer more days</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-cell-lbl">Early Voting — General</div>
+        <div class="date-cell-val">Oct 24 – 31, 2026</div>
+        <div class="date-cell-note">Mandatory period; counties may offer more days</div>
+      </div>
+    </div>
+
+    <p class="fl-box-section-label">Your Rights as a Voter with a Disability in Florida</p>
+    <div class="accom-grid">
+      <div class="accom-card">
+        <div class="accom-icon">♿</div>
+        <div class="accom-title">Accessible Polling Place</div>
+        <p>All Florida polling places are required by law to be physically accessible, including accessible parking, ramps, and pathways. If your site is not accessible, you must be provided an alternative.</p>
+      </div>
+      <div class="accom-card">
+        <div class="accom-icon">🖥️</div>
+        <div class="accom-title">Accessible Voting Machine</div>
+        <p>Every polling place must have at least one accessible touchscreen with audio, enlarged text, braille, and sip-and-puff capability so you can vote privately and independently.</p>
+      </div>
+      <div class="accom-card">
+        <div class="accom-icon">🤝</div>
+        <div class="accom-title">Voting Assistance</div>
+        <p>You may bring anyone you choose to assist you — a friend, family member, or caregiver — as long as it is not your employer or union representative. You do not need to disclose the nature of your disability.</p>
+      </div>
+      <div class="accom-card">
+        <div class="accom-icon">📬</div>
+        <div class="accom-title">Vote by Mail</div>
+        <p>Any Florida voter may request a mail ballot without providing a reason. An accessible digital ballot (OmniBallot) is available for voters with visual impairments or other disabilities that make marking a paper ballot difficult.</p>
+      </div>
+      <div class="accom-card">
+        <div class="accom-icon">🏥</div>
+        <div class="accom-title">Supervised Voting</div>
+        <p>If you live in a nursing home or assisted living facility, supervised voting is available. Contact your county Supervisor of Elections for in-facility voting options.</p>
+      </div>
+      <div class="accom-card">
+        <div class="accom-icon">🚗</div>
+        <div class="accom-title">Curbside Voting</div>
+        <p>If you cannot enter the polling place due to a disability, you may request curbside voting — poll workers will bring everything you need to your vehicle.</p>
+      </div>
+    </div>
+
+    <p class="fl-box-section-label">How to Request Accommodations</p>
+    <p>Contact your county Supervisor of Elections before Election Day to confirm your polling place is accessible or to request accommodations. Find your county Supervisor at <a href="https://dos.fl.gov/elections/for-voters/" target="_blank">dos.fl.gov/elections/for-voters</a>.</p>
+
+    <div class="hotline">
+      <div class="hotline-icon">📞</div>
+      <div>
+        <strong>Disability Rights Florida Voter Hotline: 877-352-7337</strong>
+        <p>If you face any accessibility issue at the polls on Election Day or during early voting, call this hotline for real-time assistance and legal support if your rights are being violated.</p>
+      </div>
+    </div>
+
+    <p class="fl-note">Note: Florida is a closed primary state. Only voters registered with a political party may vote in that party's primary. Registration and party changes must be completed by the registration deadline to be valid for that election.</p>
+  </div>
+
+  <h2>What Florida's Disabled Voters and Allies Can Do</h2>
+
+  <p>The disability community has been clear: this fight is not over, and every voice matters.</p>
+
+  <ul class="action-list">
+    <li>
+      <span class="action-num">01</span>
+      <span class="action-text"><strong>Contact your U.S. Senators.</strong> The SAVE America Act needs 60 votes to overcome a filibuster. Call the U.S. Capitol switchboard at (202) 224-3121 and urge your senators to vote no on the SAVE America Act and any related voter restriction bills.</span>
+    </li>
+    <li>
+      <span class="action-num">02</span>
+      <span class="action-text"><strong>Register or verify your registration now.</strong> Florida's primary registration deadline is July 20, 2026. Visit <a href="https://registertovoteflorida.gov" target="_blank">registertovoteflorida.gov</a> to register or confirm your status.</span>
+    </li>
+    <li>
+      <span class="action-num">03</span>
+      <span class="action-text"><strong>Request your mail ballot early.</strong> Any Florida voter can vote by mail without a reason. Contact your county Supervisor of Elections. Primary deadline: August 6, 2026 by 5 PM. General deadline: October 22, 2026 by 5 PM.</span>
+    </li>
+    <li>
+      <span class="action-num">04</span>
+      <span class="action-text"><strong>Secure your documents now.</strong> Gather your passport, birth certificate, and/or Real ID regardless of whether the SAVE Act passes. Florida's state law already requires voter roll verification against federal databases.</span>
+    </li>
+    <li>
+      <span class="action-num">05</span>
+      <span class="action-text"><strong>Connect with REV UP Florida.</strong> AAPD's REV UP campaign has a Florida chapter — Access the Vote Florida — that connects disabled voters to resources and organizing. Visit <a href="https://www.aapd.com/revup-join/" target="_blank">aapd.com/revup-join</a>.</span>
+    </li>
+    <li>
+      <span class="action-num">06</span>
+      <span class="action-text"><strong>Use ASAN's plain-language tools.</strong> The Autistic Self Advocacy Network has accessible guides to voting rights and contacting elected officials, designed for autistic and other disabled voters. Visit <a href="https://autisticadvocacy.org/vote/" target="_blank">autisticadvocacy.org/vote</a>.</span>
+    </li>
+    <li>
+      <span class="action-num">07</span>
+      <span class="action-text"><strong>Know your hotline.</strong> If you experience a voting accessibility problem, call the Disability Rights Florida Voter Hotline: <a href="tel:8773527337">877-352-7337</a>.</span>
+    </li>
+    <li>
+      <span class="action-num">08</span>
+      <span class="action-text"><strong>Share personal stories.</strong> Statistics alone don't move hearts and minds. Sharing your own experience with lawmakers, local media, and your community can make a powerful difference.</span>
+    </li>
+    <li>
+      <span class="action-num">09</span>
+      <span class="action-text"><strong>Support legal challenges.</strong> The ACLU, The Arc, NDRN, and the Campaign Legal Center are actively litigating against voter restriction laws. Consider donating to or amplifying their work.</span>
+    </li>
+  </ul>
+
+  <h2>Democracy Is for Everyone</h2>
+
+  <p>The disability rights movement has a foundational principle: <em>Nothing About Us, Without Us.</em> It means that disabled people must have a seat at the table when decisions are made that affect their lives. The right to vote is how that principle gets enforced in a democracy. Without it, disabled people — nearly 3 million of them in Florida alone — have no seat at any table.</p>
+
+  <p>The SAVE America Act, Florida's state-level counterpart, and the executive orders now being challenged in court all point in the same direction: toward a democracy that is harder to access for the people who already face the most barriers. The organizations fighting back — AAPD, The Arc, ASAN, NDRN, NCIL, NCAV, and many more — are not just opposing a bill. They are defending the premise that disabled Americans are full citizens of this country, with the same right to participate in its democracy as anyone else.</p>
+
+  <blockquote>That premise should not require defending. But right now, it does.</blockquote>
+
+</article>
+
+<!-- POST FOOTER -->
+<div class="post-footer fade-in">
+  <div class="post-footer-tags">
+    <span class="post-footer-tag">Disability Rights</span>
+    <span class="post-footer-tag">Voting Access</span>
+    <span class="post-footer-tag">SAVE Act</span>
+    <span class="post-footer-tag">Florida</span>
+    <span class="post-footer-tag">Health Equity</span>
+    <span class="post-footer-tag">Advocacy</span>
+    <span class="post-footer-tag">AAPD</span>
+    <span class="post-footer-tag">ASAN</span>
+  </div>
+
+  <!-- Sources -->
+  <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid #e5e7eb;">
+    <p style="font-size:0.68rem; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:#9ca3af; margin-bottom:0.75rem; font-family:'DM Sans',sans-serif;">Sources &amp; Further Reading</p>
+    <ol style="padding-left:1.1rem; font-size:0.8rem; color:#6b7280; line-height:1.85;">
+      <li>AAPD, <a href="https://www.aapd.com/american-association-of-people-with-disabilities-response-to-house-passage-of-the-save-america-act/" target="_blank">"Response to House Passage of the SAVE America Act,"</a> February 13, 2026.</li>
+      <li>AAPD, <a href="https://www.aapd.com/attacks-on-vote-by-mail-voting-machines-threatens-disabled-voters/" target="_blank">"Attacks on Vote-By-Mail, Voting Machines Threaten Disabled Voters,"</a> August 2025.</li>
+      <li>NCAV, <a href="https://ncavote.org/resource/nosaveact/" target="_blank">"Disability Rights Groups Warn Congress: SAVE Act Bills Would Block Millions from Voting."</a></li>
+      <li>NDRN, <a href="https://www.ndrn.org/resource/saveact/" target="_blank">"Recovery Advocates Urge Congress to Oppose SAVE America Act,"</a> April 2, 2026.</li>
+      <li>The Arc, <a href="https://thearc.org/blog/save-america-act-voting-rights-disabilities/" target="_blank">"The SAVE America Act Threatens Accessible Voting for People with Disabilities,"</a> March 20, 2026.</li>
+      <li>ASAN, <a href="https://autisticadvocacy.org/2026/02/the-save-act-would-stop-some-disabled-people-from-voting/" target="_blank">"The SAVE Act Would Stop Some Disabled People from Voting,"</a> February 25, 2026.</li>
+      <li>Naomi Hess, <a href="https://time.com/article/2026/03/23/how-the-save-america-act-hurts-disabled-voters/" target="_blank">"How the SAVE America Act Hurts Disabled Voters,"</a> <em>Time</em>, March 23, 2026.</li>
+      <li><a href="https://time.com/article/2026/04/03/voting-restrictions-citizenship-proof-state-laws-ballot-measures-trump-save-act/" target="_blank">"Here Are the States Advancing New Voting Restrictions,"</a> <em>Time</em>, April 3, 2026.</li>
+      <li>Florida Division of Elections, <a href="https://dos.fl.gov/elections/for-voters/election-dates/" target="_blank">Election Dates 2026.</a></li>
+      <li>Disability Rights Florida, <a href="https://disabilityrightsflorida.org/disability-topics/disability_topic_info/voting_rights_responsibilities" target="_blank">"Voting Rights in Florida."</a></li>
+      <li>U.S. Vote Foundation, <a href="https://www.usvotefoundation.org/disabled-voter-guide/florida" target="_blank">Florida Resources for Voters with Disabilities.</a></li>
+      <li>CDC Disability and Health Data System, <a href="https://www.cdc.gov/dhds/impacts/index.html" target="_blank">State Profile Data: Florida,</a> BRFSS 2022.</li>
+      <li>CDC, <a href="https://www.cdc.gov/media/releases/2024/s0716-Adult-disability.html" target="_blank">"Data Shows Over 70 Million U.S. Adults Reported Having a Disability,"</a> July 2024.</li>
+      <li>Able Trust, <a href="https://www.abletrust.org/wp-content/uploads/2024/05/The-Able-Trust-2022-Census-Update-May2024.pdf" target="_blank">"2024 Annual Census Update: Disability in Florida."</a></li>
+      <li>U.S. Election Assistance Commission / Rutgers University, "Fact Sheet on Disability and Voter Turnout in 2020."</li>
+      <li>ACLU, <a href="https://www.aclu.org/press-releases/aclu-condemns-house-passage-of-save-america-act-as-dangerous-assault-on-democracy" target="_blank">"ACLU Condemns House Passage of SAVE America Act,"</a> February 12, 2026.</li>
+      <li>Brennan Center for Justice, <a href="https://www.brennancenter.org/our-work/analysis-opinion/millions-americans-dont-have-documents-proving-their-citizenship-readily" target="_blank">Reports on documentary proof of citizenship and voter access.</a></li>
+    </ol>
+  </div>
+
+  <div class="post-nav">
+    <a href="../blog.html">&larr; Back to all posts</a>
+  </div>
+</div>
+
+</main>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container fade-in">
+    <h2>Want to Continue This Conversation?</h2>
+    <p>I welcome collaboration, commentary, and respectful disagreement on this topic.</p>
+    <a href="../contact.html" class="btn btn-primary">Get in Touch &rarr;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Vijay Vasudevan, Ph.D., M.P.H.</span>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../research.html">Research</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../grants.html">Grants</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/vijay-vasudevan-phd/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../main.js"></script>
+
+</body>
+</html>
