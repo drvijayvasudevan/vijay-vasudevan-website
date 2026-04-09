@@ -1,0 +1,45 @@
+name: Rebuild Blog Index
+
+# Runs automatically whenever you push any file to the repo
+# (including new blog posts). Also runnable manually from GitHub.
+on:
+  push:
+    branches:
+      - main          # change to 'master' if your default branch is master
+  workflow_dispatch:  # lets you trigger it manually from GitHub Actions tab
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # needed to commit the updated blog.html back
+
+    steps:
+      # 1. Check out your repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3. Install the HTML parser
+      - name: Install dependencies
+        run: pip install beautifulsoup4
+
+      # 4. Run the build script
+      - name: Build blog index
+        run: python build_blog.py
+
+      # 5. Commit and push the updated blog.html back to the repo
+      - name: Commit updated blog.html
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog.html
+          # Only commit if blog.html actually changed
+          git diff --cached --quiet || git commit -m "Auto-update blog index [skip ci]"
+          git push
