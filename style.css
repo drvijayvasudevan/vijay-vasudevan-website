@@ -172,9 +172,9 @@ ul, ol { list-style: none; }
 }
 
 .nav-toggle span {
-  display: block; width: 22px; height: 2px;
-  background: #3dbcad !important; border-radius: 1px;
-  margin: 5px 0; transition: 0.3s;
+  display: block; width: 22px; height: 3px;
+  background: #3dbcad !important; border-radius: 2px;
+  margin: 4px 0; transition: 0.3s;
 }
 
 /* ══════════════════════════════
@@ -909,7 +909,7 @@ ul, ol { list-style: none; }
   .form-row { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .nav-menu {
     display: none;
     position: absolute;
@@ -922,7 +922,7 @@ ul, ol { list-style: none; }
   .nav-menu.open { display: flex; }
   .nav-menu a { padding: 0.65rem 0.75rem; }
   .nav-menu a::after { display: none; }
-  .nav-toggle { display: block; }
+  .nav-toggle { display: block !important; }
   .services-grid { grid-template-columns: 1fr; }
 }
 
