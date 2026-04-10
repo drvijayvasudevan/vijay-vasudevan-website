@@ -1351,3 +1351,55 @@ a[target="_blank"]::after {
     transform: none !important;
   }
 }
+
+/* ════════════════════════════════════════════
+   FINAL HAMBURGER FIX — last rules win
+   ════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  button.nav-toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 8px !important;
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+  }
+
+  button.nav-toggle span {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 22px !important;
+    height: 3px !important;
+    min-height: 3px !important;
+    margin: 3px 0 !important;
+    padding: 0 !important;
+    background-color: #3dbcad !important;
+    border-radius: 2px !important;
+    transition: transform 0.2s ease, opacity 0.2s ease !important;
+    transform: none !important;
+  }
+
+  button.nav-toggle.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg) !important;
+  }
+  button.nav-toggle.open span:nth-child(2) {
+    opacity: 0 !important;
+  }
+  button.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg) !important;
+  }
+}
+@media (min-width: 769px) {
+  button.nav-toggle {
+    display: none !important;
+  }
+}
