@@ -10,8 +10,11 @@ How it works:
   2. Reads the title, description, date, tags, and read time
      from each post's <head> and post-header markup
   3. Sorts posts newest-first by date
-  4. Rebuilds blog.html, replacing everything between the
-     <!-- BLOG-START --> and <!-- BLOG-END --> markers
+  4. Collects all unique tags across posts
+  5. Rebuilds blog.html, replacing:
+     - Tag filter buttons between <!-- FILTERS-START --> / <!-- FILTERS-END -->
+     - Blog cards between <!-- BLOG-START --> / <!-- BLOG-END -->
+     - Filter script between <!-- SCRIPT-START --> / <!-- SCRIPT-END -->
 
 Requirements: Python 3.8+ and beautifulsoup4
   pip install beautifulsoup4
@@ -22,12 +25,17 @@ import re
 from pathlib import Path
 from datetime import datetime
 from bs4 import BeautifulSoup
+from collections import Counter
 
 # ── Config ────────────────────────────────────────────────────
 BLOG_DIR      = Path("blog")          # folder containing post HTML files
 BLOG_HTML     = Path("blog.html")     # the listing page to update
-START_MARKER  = "<!-- BLOG-START -->" # marker in blog.html where cards begin
-END_MARKER    = "<!-- BLOG-END -->"   # marker in blog.html where cards end
+START_MARKER  = "<!-- BLOG-START -->"
+END_MARKER    = "<!-- BLOG-END -->"
+FILTER_START  = "<!-- FILTERS-START -->"
+FILTER_END    = "<!-- FILTERS-END -->"
+SCRIPT_START  = "<!-- SCRIPT-START -->"
+SCRIPT_END    = "<!-- SCRIPT-END -->"
 # ─────────────────────────────────────────────────────────────
 
 
@@ -37,6 +45,10 @@ def parse_post(filepath: Path) -> dict | None:
         soup = BeautifulSoup(filepath.read_text(encoding="utf-8"), "html.parser")
     except Exception as e:
         print(f"  ⚠ Could not parse {filepath.name}: {e}")
+        return None
+
+    # Skip the template file
+    if filepath.name == "post-template.html":
         return None
 
     # Title — from <title> tag, strip site name suffix
@@ -55,9 +67,14 @@ def parse_post(filepath: Path) -> dict | None:
     except ValueError:
         date_obj = datetime.min  # push undated posts to the bottom
 
-    # Tags — all .post-tag spans
-    tag_els = soup.find_all(class_="post-tag")
-    tags = [t.get_text(strip=True) for t in tag_els]
+    # Tags — from .post-footer-tag spans (the full tag list at the bottom of each post)
+    footer_tag_els = soup.find_all(class_="post-footer-tag")
+    tags = [t.get_text(strip=True) for t in footer_tag_els]
+
+    # If no footer tags found, fall back to header .post-tag spans
+    if not tags:
+        tag_els = soup.find_all(class_="post-tag")
+        tags = [t.get_text(strip=True) for t in tag_els]
 
     # Read time — from author-bar sibling text containing "min read"
     read_time = ""
@@ -83,18 +100,21 @@ def parse_post(filepath: Path) -> dict | None:
 def tag_class(tag_text: str) -> str:
     """Map a tag label to its CSS modifier class."""
     t = tag_text.lower()
-    if any(w in t for w in ["data", "research", "epidem", "statistic"]):
+    if any(w in t for w in ["data", "research", "epidem", "statistic", "autism", "mental health", "medicaid"]):
         return "blog-tag--data"
-    if any(w in t for w in ["field", "update", "advocacy", "disability", "voting", "policy"]):
+    if any(w in t for w in ["field", "update", "advocacy", "disability", "voting", "policy",
+                             "rights", "equity", "florida", "employment"]):
         return "blog-tag--field"
     return "blog-tag--guide"
 
 
 def render_card(post: dict) -> str:
     """Render a single blog-card HTML block for one post."""
+    # Show only the first 2 tags on the card to keep it clean
+    display_tags = post["tags"][:2]
     tags_html = "\n".join(
-        f'            <span class="blog-tag {tag_class(t)}">{t}</span>'
-        for t in post["tags"]
+        f'            <span class="blog-tag {tag_class(t)}" data-filter-tag="{t}">{t}</span>'
+        for t in display_tags
     )
     date_html = (
         f'\n            <span class="blog-date">{post["date_str"]}</span>'
@@ -105,8 +125,11 @@ def render_card(post: dict) -> str:
         if post["read_time"] else ""
     )
 
+    # All tags go in data-tags attribute for filtering
+    tags_attr = ",".join(post["tags"])
+
     return f"""
-      <article class="blog-card">
+      <article class="blog-card" data-tags="{tags_attr}">
         <div class="blog-card-body">
           <div class="blog-card-meta">
 {tags_html}{date_html}
@@ -119,6 +142,70 @@ def render_card(post: dict) -> str:
           {read_time_html}
         </div>
       </article>"""
+
+
+def render_filters(all_tags: list[str]) -> str:
+    """Render the filter button bar from all unique tags, sorted by frequency."""
+    tag_counts = Counter(all_tags)
+    sorted_tags = [tag for tag, _ in tag_counts.most_common()]
+
+    buttons = ['      <button class="filter-btn active" data-tag="all">All Posts</button>']
+    for tag in sorted_tags:
+        buttons.append(f'      <button class="filter-btn" data-tag="{tag}">{tag}</button>')
+
+    return "\n".join(buttons)
+
+
+def render_filter_script() -> str:
+    """Render the JavaScript that handles tag filtering."""
+    return """    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn[data-tag]');
+      const tagBtns = document.querySelectorAll('.blog-tag[data-filter-tag]');
+      const cards = document.querySelectorAll('.blog-card[data-tags]');
+
+      function filterByTag(tag) {
+        // Update active button
+        filterBtns.forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+
+        // Show/hide cards with animation
+        cards.forEach(card => {
+          const cardTags = card.dataset.tags.split(',');
+          if (tag === 'all' || cardTags.includes(tag)) {
+            card.style.display = '';
+            card.style.opacity = '1';
+          } else {
+            card.style.display = 'none';
+            card.style.opacity = '0';
+          }
+        });
+      }
+
+      // Filter bar button clicks
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => filterByTag(btn.dataset.tag));
+      });
+
+      // Inline tag clicks on cards
+      tagBtns.forEach(btn => {
+        btn.style.cursor = 'pointer';
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          filterByTag(btn.dataset.filterTag);
+          document.querySelector('.blog-filters').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    });
+    </script>"""
+
+
+def replace_between_markers(content: str, start: str, end: str, new_inner: str) -> str:
+    """Replace content between two markers, keeping the markers in place."""
+    pattern = re.compile(re.escape(start) + r".*?" + re.escape(end), re.DOTALL)
+    if not re.search(pattern, content):
+        print(f"  ⚠ Markers {start} / {end} not found — skipping.")
+        return content
+    return re.sub(pattern, f"{start}\n{new_inner}\n      {end}", content)
 
 
 def build():
@@ -146,8 +233,17 @@ def build():
     for p in posts:
         print(f"   {p['date_str'] or 'undated':20}  {p['title'][:60]}")
 
-    # Build the cards block
+    # Collect all tags across all posts
+    all_tags = []
+    for p in posts:
+        all_tags.extend(p["tags"])
+    unique_tags = list(dict.fromkeys(all_tags))
+    print(f"\n🏷  Found {len(unique_tags)} unique tag(s): {', '.join(unique_tags)}")
+
+    # Build HTML blocks
     cards_html = "\n".join(render_card(p) for p in posts)
+    filters_html = render_filters(all_tags)
+    script_html = render_filter_script()
 
     # Read current blog.html
     if not BLOG_HTML.exists():
@@ -156,27 +252,17 @@ def build():
 
     content = BLOG_HTML.read_text(encoding="utf-8")
 
-    # Find and replace between markers
-    pattern = re.compile(
-        re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER),
-        re.DOTALL
-    )
+    # Replace cards
+    content = replace_between_markers(content, START_MARKER, END_MARKER, cards_html)
 
-    if not re.search(pattern, content):
-        print(f"\n✗ Could not find markers in {BLOG_HTML}.")
-        print(f"  Make sure your blog.html contains exactly:")
-        print(f"    {START_MARKER}")
-        print(f"    {END_MARKER}")
-        return
+    # Replace filters
+    content = replace_between_markers(content, FILTER_START, FILTER_END, filters_html)
 
-    new_content = re.sub(
-        pattern,
-        f"{START_MARKER}\n{cards_html}\n      {END_MARKER}",
-        content
-    )
+    # Replace script
+    content = replace_between_markers(content, SCRIPT_START, SCRIPT_END, script_html)
 
-    BLOG_HTML.write_text(new_content, encoding="utf-8")
-    print(f"\n🎉 blog.html updated successfully with {len(posts)} post(s).")
+    BLOG_HTML.write_text(content, encoding="utf-8")
+    print(f"\n🎉 blog.html updated successfully with {len(posts)} post(s) and {len(unique_tags)} tag(s).")
 
 
 if __name__ == "__main__":

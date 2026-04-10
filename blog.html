@@ -63,10 +63,23 @@
 
     <!-- Filters -->
     <div class="blog-filters" role="group" aria-label="Filter posts by topic">
-      <button class="filter-btn active">All Posts</button>
-      <button class="filter-btn">Data &amp; Research</button>
-      <button class="filter-btn">Field Updates</button>
-      <button class="filter-btn">Practical Guides</button>
+      <!-- FILTERS-START -->
+      <button class="filter-btn active" data-tag="all">All Posts</button>
+      <button class="filter-btn" data-tag="Health Equity">Health Equity</button>
+      <button class="filter-btn" data-tag="Disability Rights">Disability Rights</button>
+      <button class="filter-btn" data-tag="Voting Access">Voting Access</button>
+      <button class="filter-btn" data-tag="SAVE Act">SAVE Act</button>
+      <button class="filter-btn" data-tag="Florida">Florida</button>
+      <button class="filter-btn" data-tag="Advocacy">Advocacy</button>
+      <button class="filter-btn" data-tag="AAPD">AAPD</button>
+      <button class="filter-btn" data-tag="ASAN">ASAN</button>
+      <button class="filter-btn" data-tag="Autism">Autism</button>
+      <button class="filter-btn" data-tag="Profound Autism">Profound Autism</button>
+      <button class="filter-btn" data-tag="Mental Health">Mental Health</button>
+      <button class="filter-btn" data-tag="Employment">Employment</button>
+      <button class="filter-btn" data-tag="Medicaid">Medicaid</button>
+      <button class="filter-btn" data-tag="World Autism Month">World Autism Month</button>
+      <!-- FILTERS-END -->
     </div>
 
     <div class="blog-grid">
@@ -113,40 +126,37 @@
 
       <!-- BLOG-START -->
 
-      <!-- POST 2 — Voting Rights (newest first) -->
-      <article class="blog-card">
+      <article class="blog-card" data-tags="Disability Rights,Voting Access,SAVE Act,Florida,Health Equity,Advocacy,AAPD,ASAN">
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span class="blog-tag blog-tag--data">Disability Rights</span>
-            <span class="blog-tag blog-tag--field">Voting Access</span>
+            <span class="blog-tag blog-tag--field" data-filter-tag="Disability Rights">Disability Rights</span>
+            <span class="blog-tag blog-tag--field" data-filter-tag="Voting Access">Voting Access</span>
             <span class="blog-date">April 8, 2026</span>
           </div>
           <h3><a href="blog/voting-rights.html">Locked Out of the Ballot Box: How Voting Restrictions Threaten Florida's Disabled Adults</a></h3>
-          <p class="blog-excerpt">As Congress debates the SAVE America Act, nearly 3 million Floridians with disabilities face the prospect of losing their most fundamental democratic right. A unified coalition of national disability organizations has sounded the alarm — here's what's at stake and what Florida voters can do right now.</p>
-          <a href="blog/voting-rights.html" class="blog-read-more">Read more →</a>
+          <p class="blog-excerpt"></p>
+          <a href="blog/voting-rights.html" class="blog-read-more">Read more &rarr;</a>
         </div>
         <div class="blog-card-aside">
           <span class="blog-read-time">14 min read</span>
         </div>
       </article>
 
-      <!-- POST 1 — The Other 75% -->
-      <article class="blog-card">
+      <article class="blog-card" data-tags="Autism,Profound Autism,Mental Health,Employment,Health Equity,Medicaid,World Autism Month">
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span class="blog-tag blog-tag--data">Data &amp; Research</span>
-            <span class="blog-tag blog-tag--field">Field Update</span>
+            <span class="blog-tag blog-tag--data" data-filter-tag="Autism">Autism</span>
+            <span class="blog-tag blog-tag--data" data-filter-tag="Profound Autism">Profound Autism</span>
             <span class="blog-date">April 2, 2026</span>
           </div>
           <h3><a href="blog/the-other-75-percent.html">The Other 75%: What We're Missing When We Only Talk About Profound Autism</a></h3>
-          <p class="blog-excerpt">This World Autism Month, the conversation has centered on the 1 in 4 who meet criteria for profound autism. But what about the three in four who don't — and whose mental health crises, employment barriers, and service gaps are no less urgent for being less visible?</p>
-          <a href="blog/the-other-75-percent.html" class="blog-read-more">Read more →</a>
+          <p class="blog-excerpt"></p>
+          <a href="blog/the-other-75-percent.html" class="blog-read-more">Read more &rarr;</a>
         </div>
         <div class="blog-card-aside">
           <span class="blog-read-time">9 min read</span>
         </div>
       </article>
-
       <!-- BLOG-END -->
 
     </div>
@@ -177,6 +187,47 @@
   </div>
 </footer>
 
+<!-- SCRIPT-START -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn[data-tag]');
+      const tagBtns = document.querySelectorAll('.blog-tag[data-filter-tag]');
+      const cards = document.querySelectorAll('.blog-card[data-tags]');
+
+      function filterByTag(tag) {
+        // Update active button
+        filterBtns.forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+
+        // Show/hide cards with animation
+        cards.forEach(card => {
+          const cardTags = card.dataset.tags.split(',');
+          if (tag === 'all' || cardTags.includes(tag)) {
+            card.style.display = '';
+            card.style.opacity = '1';
+          } else {
+            card.style.display = 'none';
+            card.style.opacity = '0';
+          }
+        });
+      }
+
+      // Filter bar button clicks
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => filterByTag(btn.dataset.tag));
+      });
+
+      // Inline tag clicks on cards
+      tagBtns.forEach(btn => {
+        btn.style.cursor = 'pointer';
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          filterByTag(btn.dataset.filterTag);
+          document.querySelector('.blog-filters').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    });
+    </script>
+      <!-- SCRIPT-END -->
 <script src="main.js"></script>
 </body>
 </html>
