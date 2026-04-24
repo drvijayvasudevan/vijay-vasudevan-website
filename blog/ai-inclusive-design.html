@@ -1,369 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI systems are making high-stakes decisions about disabled people's jobs, healthcare, and benefits — while being built without them. That has to change.">
-  <title>AI Is Already Making Decisions About Disabled People. They're Not in the Room. | Vijay Vasudevan</title>
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    .post-meta {
-      color: #666;
-      font-size: 0.85rem;
-      margin-bottom: 12px;
-      letter-spacing: 0.3px;
-    }
-    .post-tags {
-      margin-bottom: 40px;
-    }
-    .post-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      padding: 3px 10px;
-      border: 1px solid #333;
-      color: #888;
-      margin-right: 6px;
-      letter-spacing: 0.4px;
-    }
-    .post-body p {
-      color: #cccccc;
-      margin-bottom: 22px;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-    .post-body h2 {
-      margin-top: 60px;
-      margin-bottom: 16px;
-      font-size: 1.4rem;
-      color: #ffffff;
-      font-weight: 600;
-    }
-    blockquote {
-      border-left: 3px solid #ffffff;
-      margin: 36px 0;
-      padding: 4px 0 4px 24px;
-    }
-    blockquote p {
-      color: #aaaaaa !important;
-      font-style: italic;
-      margin-bottom: 6px !important;
-    }
-    blockquote cite {
-      color: #666;
-      font-size: 0.82rem;
-      font-style: normal;
-      letter-spacing: 0.3px;
-    }
-    .post-body a {
-      color: #ffffff;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .post-body a:hover {
-      color: #aaaaaa;
-    }
-    .references {
-      margin-top: 70px;
-      border-top: 1px solid #222;
-      padding-top: 40px;
-    }
-    .references h2 {
-      font-size: 1.1rem !important;
-      margin-top: 0 !important;
-      margin-bottom: 20px;
-      color: #aaaaaa !important;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .references ol {
-      padding-left: 20px;
-    }
-    .references li {
-      color: #777;
-      font-size: 0.82rem;
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-    .references li a {
-      color: #888;
-    }
-    .back-link {
-      display: inline-block;
-      color: #777;
-      font-size: 0.85rem;
-      text-decoration: none;
-      margin-bottom: 50px;
-      letter-spacing: 0.3px;
-    }
-    .back-link:hover {
-      color: #ffffff;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Is Already Making Decisions About Disabled People. They're Not in the Room. | Blog | Vijay Vasudevan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../blog.css">
 </head>
-
 <body>
 
-<nav>
-  <a href="/">Home</a>
-  <a href="../about.html">About</a>
-  <a href="../research.html">Research</a>
-  <a href="../grants.html">Grants</a>
-  <a href="../leadership.html">Leadership</a>
-  <a href="../contact.html">Contact</a>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" role="navigation" aria-label="Main">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Vijay Vasudevan — Home">
+      <span class="nav-brand-name">Vijay Vasudevan</span>
+      <span class="nav-brand-sub">Public Health &amp; Data Science</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="/">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../research.html">Research</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../grants.html">Grants</a>
+      <a href="../leadership.html">Leadership</a>
+      <a href="../contact.html" class="nav-cta-link">Get in Touch →</a>
+    </div>
+  </div>
 </nav>
 
-<div class="container">
+<main id="main-content">
 
-  <a href="/blog/" class="back-link">← Back to Blog</a>
-
-  <h1>AI Is Already Making Decisions About Disabled People. They're Not in the Room.</h1>
-
-  <div class="post-meta">
-    Vijay Vasudevan, Ph.D., M.P.H. &nbsp;·&nbsp;
-    <span class="post-meta-date">April 23, 2026</span>
-    &nbsp;·&nbsp; 7 min read
-  </div>
-  <div class="post-tags">
-    <span class="post-tag">AI &amp; Disability</span>
-    <span class="post-tag">Health Equity</span>
-    <span class="post-tag">Participatory Methods</span>
-  </div>
-
-  <div class="post-body">
-
-    <p>
-      Right now, somewhere in the United States, an algorithm is reviewing a Medicaid claim
-      filed by a disabled person. Another is screening a resume and deciding whether an
-      autistic job applicant advances to the next round. A third is sitting inside a hospital
-      system, shaping how a clinician documents a patient encounter — and potentially getting
-      it wrong in ways that are nearly impossible to correct afterward.
-    </p>
-
-    <p>
-      AI has arrived in the systems that disabled people depend on most. And in nearly every
-      case, it arrived without them.
-    </p>
-
-    <p>
-      This is not a hypothetical concern about future technology. It is the current state of
-      affairs, documented across employment, healthcare, government benefits, education, and
-      transportation.<sup>3</sup> About 16% of the global population lives with some form of
-      disability.<sup>2</sup> That is over a billion people interacting daily with systems
-      that were designed, by and large, without their input — and that carry encoded
-      assumptions about what a "normal" user looks like, moves like, speaks like, and needs.
-      For disabled people, those assumptions are not neutral. They are a source of active,
-      ongoing harm.
-    </p>
-
-    <p>
-      The question is not whether we can afford to redesign AI systems to be more inclusive.
-      The question is whether we can afford not to.
-    </p>
-
-    <h2>The Algorithm Does Not Know You</h2>
-
-    <p>
-      Consider what current AI systems actually do when a disabled person interacts with them.
-    </p>
-
-    <p>
-      Hiring algorithms screen out resumes with employment gaps — without accounting for the
-      fact that those gaps may reflect disability, caregiving, or medical leave. Video
-      interview tools score candidates on eye contact, vocal cadence, and facial expression —
-      criteria that systematically disadvantage autistic applicants, Deaf candidates, and
-      people with speech differences or conditions like Tourette's syndrome. Workplace
-      surveillance software flags employees who take extra bathroom breaks or step away for
-      medication — breaks that are legally protected accommodations — as productivity
-      violations.<sup>3</sup>
-    </p>
-
-    <p>
-      In healthcare, AI documentation tools transcribe clinical encounters and draft patient
-      messages — but perform significantly worse for patients with speech differences, and
-      can hallucinate content that becomes part of a permanent medical record that is
-      extremely difficult to correct.<sup>3</sup> Benefits systems run claims through
-      algorithms that disabled people often cannot see, challenge, or even identify as the
-      source of a denial.
-    </p>
-
-    <p>
-      And in the conversational AI that many disabled people turn to for support and guidance,
-      something more subtle but equally damaging is at work. When an autistic person discloses
-      their autism to a chatbot and asks for everyday social advice, the AI becomes
-      dramatically more likely to recommend avoidance — stay home, skip the date, decline the
-      invitation — than it would for a user who disclosed nothing.<sup>1</sup> The system is
-      not responding to what the person asked. It is responding to a statistical caricature
-      of who it assumes autistic people are: introverted, fragile, incapable of handling the
-      ordinary risks of social life.
-    </p>
-
-    <blockquote>
-      <p>
-        "It takes a statistic and smears it across everybody, which ignores the diversity
-        of autistic people."
-      </p>
-      <cite>— Autistic research participant<sup>1</sup></cite>
-    </blockquote>
-
-    <p>
-      Across every one of these domains, the common thread is the same: AI systems were
-      trained on data that underrepresents or misrepresents disabled people, built by teams
-      that did not include disabled people, and evaluated against benchmarks that did not
-      account for disabled people's needs.<sup>2,3</sup> The result is not neutral technology
-      with gaps. It is technology that actively encodes the assumption that disabled people
-      are edge cases — and treats them accordingly.
-    </p>
-
-    <h2>Why This Is a Public Health Crisis, Not a Design Problem</h2>
-
-    <p>
-      We tend to discuss AI bias as a problem of fairness or representation. Those frames
-      are accurate, but they understate the stakes for disabled people. This is not primarily
-      about missed opportunities or hurt feelings. It is about health outcomes — and for
-      many people, survival.
-    </p>
-
-    <p>
-      When a benefits algorithm wrongly denies or reduces Medicaid, a disabled person may
-      lose access to medications, home care, or the supports that allow them to live
-      independently. When a hiring algorithm screens out a disabled applicant, it contributes
-      to unemployment rates that run roughly double those of nondisabled people — and
-      unemployment is one of the most powerful determinants of physical and mental health we
-      know. When a hospital AI produces inaccurate documentation for a patient with a
-      communication difference, every clinical decision downstream is built on a record that
-      does not reflect what actually happened.
-    </p>
-
-    <p>
-      People with disabilities already experience higher rates of premature mortality, greater
-      morbidity, and persistent barriers to healthcare access compared to nondisabled
-      people.<sup>2</sup> These are not random misfortunes. They are the products of systems
-      — healthcare, economic, policy — designed without adequate attention to disabled
-      people's needs. AI, deployed at scale into those same systems without that attention,
-      does not represent a new risk. It represents an acceleration of an existing one.
-    </p>
-
-    <p>
-      And for disabled people who sit at multiple intersections — who are also people of
-      color, low-income, LGBTQ+, or rural — the compounding is not additive. It is
-      multiplicative. AI systems that carry racial bias, disability bias, and economic bias
-      simultaneously do not produce three separate manageable problems. They produce one
-      cascading, reinforcing crisis of exclusion.<sup>3</sup>
-    </p>
-
-    <h2>What Actually Needs to Change</h2>
-
-    <p>
-      The disability community has not been silent about what they need from technology.
-      They have been specific, consistent, and largely ignored at the stages of development
-      where it would actually matter. That is the problem we need to fix — not by adding
-      disability as a late-stage accessibility review, but by restructuring who is in the
-      room when AI systems are designed.
-    </p>
-
-    <p>
-      Disabled people need to be co-designers, not test subjects. There is a meaningful
-      difference between user-testing a finished product with disabled people and genuinely
-      involving them throughout — in defining what problem the system should solve, in
-      deciding what data should train it, in setting the criteria for what "working well"
-      even means.<sup>2</sup> When disabled people are brought in only at the end, their
-      feedback adjusts the margins. When they are involved from the beginning, it changes
-      the foundation.
-    </p>
-
-    <p>
-      AI systems also need to be built to support disabled users' autonomy rather than
-      override it. An AI that decides, upon learning someone is autistic, that this person
-      needs to be protected from social risk is not being helpful. It is being paternalistic —
-      encoding a deficit view of disability into every recommendation it makes, at scale,
-      invisibly. The goal should be systems that expand the range of choices available to
-      disabled users, provide genuinely useful information, and then respect those users'
-      capacity to decide for themselves.<sup>1,2</sup>
-    </p>
-
-    <p>
-      Training data is not a technical afterthought — it is a policy decision. When datasets
-      exclude disabled people, or include them only through the lens of clinical deficit,
-      every model trained on that data will reflect those exclusions. Fixing this requires
-      active investment in inclusive data collection, meaningful informed consent processes
-      with disabled communities, and governance structures that give disabled people
-      sovereignty over how their data is used.<sup>3</sup>
-    </p>
-
-    <p>
-      And the systems that use AI to make consequential decisions about disabled people's
-      lives — benefits, employment, healthcare — need accountability structures that match
-      the stakes. That means mandatory pre-deployment audits for disability bias, transparent
-      disclosure when algorithmic tools are used in decisions, and meaningful pathways for
-      disabled people to challenge outcomes and seek redress when systems get it wrong.<sup>3</sup>
-    </p>
-
-    <h2>The Cost of Waiting</h2>
-
-    <p>
-      None of this is technically difficult. The barrier is not capability — it is priority.
-      Disability inclusion in AI has been treated as optional, as a nice-to-have, as something
-      to address once the core product is built. The evidence of the last several years makes
-      clear what that choice costs: discriminatory hiring decisions at scale, inaccurate
-      medical records, wrongful benefit denials, and AI advice that systematically narrows
-      the lives of disabled people rather than expanding them.
-    </p>
-
-    <p>
-      We are at a moment when the architecture of these systems is still being built. The
-      training datasets, the alignment processes, the evaluation frameworks, the governance
-      structures — all of it is still in formation. That window will not stay open. Every
-      month that passes without meaningful disability inclusion is another month of harm
-      embedded more deeply into systems that will be harder and harder to change.
-    </p>
-
-    <p>
-      The disability community has the expertise. The research community has the methods.
-      The public health field has the frameworks for understanding how systemic exclusion
-      becomes health disparity. What is needed now is the decision to actually use them —
-      before the architecture hardens, and the exclusion becomes permanent.
-    </p>
-
-    <div class="references">
-      <h2>References</h2>
-      <ol>
-        <li>
-          Wohn, C., Çarık, B., Ding, X., Lee, S. W., Kim, Y.-H., &amp; Rho, E. H. (2026).
-          "Are we writing an advice column for Spock here?" Understanding stereotypes in AI
-          advice for autistic users. <em>Proceedings of the CHI Conference on Human Factors
-          in Computing Systems (CHI '26)</em>. ACM.
-          <a href="https://doi.org/10.1145/3772318.3791319" target="_blank">
-            https://doi.org/10.1145/3772318.3791319
-          </a>
-        </li>
-        <li>
-          Umucu, E. (2025). Artificial intelligence and health equity for people with
-          disabilities: An integrated framework for disability-inclusive AI design.
-          <em>INQUIRY: The Journal of Health Care Organization, Provision, and Financing</em>,
-          62, 1–6.
-          <a href="https://doi.org/10.1177/00469580251365472" target="_blank">
-            https://doi.org/10.1177/00469580251365472
-          </a>
-        </li>
-        <li>
-          Aboulafia, A., &amp; Claypool, H. (2025). <em>Building a disability-inclusive AI
-          ecosystem: A cross-disability, cross-systems analysis of best practices.</em>
-          Center for Democracy &amp; Technology and American Association of People with
-          Disabilities.
-          <a href="https://cdt.org/insights/building-a-disability-inclusive-ai-ecosystem-a-cross-disability-cross-systems-analysis-of-best-practices/" target="_blank">
-            https://cdt.org/insights/building-a-disability-inclusive-ai-ecosystem
-          </a>
-        </li>
-      </ol>
+<!-- POST HEADER -->
+<header class="post-header">
+  <div class="container">
+    <div class="post-meta-top">
+      <span class="post-tag">AI &amp; Disability</span>
+      <span class="post-meta-date">April 23, 2026</span>
     </div>
-
+    <h1>AI Is Already Making Decisions About Disabled People. They're Not in the Room.</h1>
+    <div class="post-meta-bottom">
+      <div class="post-author">
+        <div class="post-author-avatar">VV</div>
+        <span class="post-author-name">Vijay Vasudevan, Ph.D., M.P.H.</span>
+      </div>
+      <span>7 min read</span>
+    </div>
   </div>
+</header>
 
+<!-- POST BODY -->
+<article class="post-body fade-in">
+
+  <p>Right now, somewhere in the United States, an algorithm is reviewing a Medicaid claim filed by a disabled person. Another is screening a resume and deciding whether an autistic job applicant advances to the next round. A third is sitting inside a hospital system, shaping how a clinician documents a patient encounter — and potentially getting it wrong in ways that are nearly impossible to correct afterward.</p>
+
+  <p>AI has arrived in the systems that disabled people depend on most. And in nearly every case, it arrived without them.</p>
+
+  <p>This is not a hypothetical concern about future technology. It is the current state of affairs, documented across employment, healthcare, government benefits, education, and transportation.<sup>3</sup> About 16% of the global population lives with some form of disability.<sup>2</sup> That is over a billion people interacting daily with systems that were designed, by and large, without their input — and that carry encoded assumptions about what a "normal" user looks like, moves like, speaks like, and needs. For disabled people, those assumptions are not neutral. They are a source of active, ongoing harm.</p>
+
+  <p>The question is not whether we can afford to redesign AI systems to be more inclusive. The question is whether we can afford not to.</p>
+
+  <h2>The Algorithm Does Not Know You</h2>
+
+  <p>Consider what current AI systems actually do when a disabled person interacts with them.</p>
+
+  <p>Hiring algorithms screen out resumes with employment gaps — without accounting for the fact that those gaps may reflect disability, caregiving, or medical leave. Video interview tools score candidates on eye contact, vocal cadence, and facial expression — criteria that systematically disadvantage autistic applicants, Deaf candidates, and people with speech differences or conditions like Tourette's syndrome. Workplace surveillance software flags employees who take extra bathroom breaks or step away for medication — breaks that are legally protected accommodations — as productivity violations.<sup>3</sup></p>
+
+  <p>In healthcare, AI documentation tools transcribe clinical encounters and draft patient messages — but perform significantly worse for patients with speech differences, and can hallucinate content that becomes part of a permanent medical record that is extremely difficult to correct.<sup>3</sup> Benefits systems run claims through algorithms that disabled people often cannot see, challenge, or even identify as the source of a denial.</p>
+
+  <p>And in the conversational AI that many disabled people turn to for support and guidance, something more subtle but equally damaging is at work. When an autistic person discloses their autism to a chatbot and asks for everyday social advice, the AI becomes dramatically more likely to recommend avoidance — stay home, skip the date, decline the invitation — than it would for a user who disclosed nothing.<sup>1</sup> The system is not responding to what the person asked. It is responding to a statistical caricature of who it assumes autistic people are: introverted, fragile, incapable of handling the ordinary risks of social life.</p>
+
+  <blockquote>"It takes a statistic and smears it across everybody, which ignores the diversity of autistic people." — Autistic research participant<sup>1</sup></blockquote>
+
+  <p>Across every one of these domains, the common thread is the same: AI systems were trained on data that underrepresents or misrepresents disabled people, built by teams that did not include disabled people, and evaluated against benchmarks that did not account for disabled people's needs.<sup>2,3</sup> The result is not neutral technology with gaps. It is technology that actively encodes the assumption that disabled people are edge cases — and treats them accordingly.</p>
+
+  <h2>Why This Is a Public Health Crisis, Not a Design Problem</h2>
+
+  <p>We tend to discuss AI bias as a problem of fairness or representation. Those frames are accurate, but they understate the stakes for disabled people. This is not primarily about missed opportunities or hurt feelings. It is about health outcomes — and for many people, survival.</p>
+
+  <p>When a benefits algorithm wrongly denies or reduces Medicaid, a disabled person may lose access to medications, home care, or the supports that allow them to live independently. When a hiring algorithm screens out a disabled applicant, it contributes to unemployment rates that run roughly double those of nondisabled people — and unemployment is one of the most powerful determinants of physical and mental health we know. When a hospital AI produces inaccurate documentation for a patient with a communication difference, every clinical decision downstream is built on a record that does not reflect what actually happened.</p>
+
+  <p>People with disabilities already experience higher rates of premature mortality, greater morbidity, and persistent barriers to healthcare access compared to nondisabled people.<sup>2</sup> These are not random misfortunes. They are the products of systems — healthcare, economic, policy — designed without adequate attention to disabled people's needs. AI, deployed at scale into those same systems without that attention, does not represent a new risk. It represents an acceleration of an existing one.</p>
+
+  <p>And for disabled people who sit at multiple intersections — who are also people of color, low-income, LGBTQ+, or rural — the compounding is not additive. It is multiplicative. AI systems that carry racial bias, disability bias, and economic bias simultaneously do not produce three separate manageable problems. They produce one cascading, reinforcing crisis of exclusion.<sup>3</sup></p>
+
+  <h2>What Actually Needs to Change</h2>
+
+  <p>The disability community has not been silent about what they need from technology. They have been specific, consistent, and largely ignored at the stages of development where it would actually matter. That is the problem we need to fix — not by adding disability as a late-stage accessibility review, but by restructuring who is in the room when AI systems are designed.</p>
+
+  <p>Disabled people need to be co-designers, not test subjects. There is a meaningful difference between user-testing a finished product with disabled people and genuinely involving them throughout — in defining what problem the system should solve, in deciding what data should train it, in setting the criteria for what "working well" even means.<sup>2</sup> When disabled people are brought in only at the end, their feedback adjusts the margins. When they are involved from the beginning, it changes the foundation.</p>
+
+  <p>AI systems also need to be built to support disabled users' autonomy rather than override it. An AI that decides, upon learning someone is autistic, that this person needs to be protected from social risk is not being helpful. It is being paternalistic — encoding a deficit view of disability into every recommendation it makes, at scale, invisibly. The goal should be systems that expand the range of choices available to disabled users, provide genuinely useful information, and then respect those users' capacity to decide for themselves.<sup>1,2</sup></p>
+
+  <p>Training data is not a technical afterthought — it is a policy decision. When datasets exclude disabled people, or include them only through the lens of clinical deficit, every model trained on that data will reflect those exclusions. Fixing this requires active investment in inclusive data collection, meaningful informed consent processes with disabled communities, and governance structures that give disabled people sovereignty over how their data is used.<sup>3</sup></p>
+
+  <p>And the systems that use AI to make consequential decisions about disabled people's lives — benefits, employment, healthcare — need accountability structures that match the stakes. That means mandatory pre-deployment audits for disability bias, transparent disclosure when algorithmic tools are used in decisions, and meaningful pathways for disabled people to challenge outcomes and seek redress when systems get it wrong.<sup>3</sup></p>
+
+  <h2>The Cost of Waiting</h2>
+
+  <p>None of this is technically difficult. The barrier is not capability — it is priority. Disability inclusion in AI has been treated as optional, as a nice-to-have, as something to address once the core product is built. The evidence of the last several years makes clear what that choice costs: discriminatory hiring decisions at scale, inaccurate medical records, wrongful benefit denials, and AI advice that systematically narrows the lives of disabled people rather than expanding them.</p>
+
+  <p>We are at a moment when the architecture of these systems is still being built. The training datasets, the alignment processes, the evaluation frameworks, the governance structures — all of it is still in formation. That window will not stay open. Every month that passes without meaningful disability inclusion is another month of harm embedded more deeply into systems that will be harder and harder to change.</p>
+
+  <p>The disability community has the expertise. The research community has the methods. The public health field has the frameworks for understanding how systemic exclusion becomes health disparity. What is needed now is the decision to actually use them — before the architecture hardens, and the exclusion becomes permanent.</p>
+
+  <p><strong>References</strong><br>
+  1. Wohn, C., Çarık, B., Ding, X., Lee, S. W., Kim, Y.-H., &amp; Rho, E. H. (2026). "Are we writing an advice column for Spock here?" Understanding stereotypes in AI advice for autistic users. <em>CHI '26</em>. <a href="https://doi.org/10.1145/3772318.3791319" target="_blank">https://doi.org/10.1145/3772318.3791319</a><br>
+  2. Umucu, E. (2025). Artificial intelligence and health equity for people with disabilities. <em>INQUIRY</em>, 62, 1–6. <a href="https://doi.org/10.1177/00469580251365472" target="_blank">https://doi.org/10.1177/00469580251365472</a><br>
+  3. Aboulafia, A., &amp; Claypool, H. (2025). <em>Building a disability-inclusive AI ecosystem.</em> CDT &amp; AAPD. <a href="https://cdt.org/insights/building-a-disability-inclusive-ai-ecosystem-a-cross-disability-cross-systems-analysis-of-best-practices/" target="_blank">https://cdt.org/insights/building-a-disability-inclusive-ai-ecosystem</a></p>
+
+</article>
+
+<!-- POST FOOTER -->
+<div class="post-footer fade-in">
+  <div class="post-footer-tags">
+    <span class="post-footer-tag">AI &amp; Disability</span>
+    <span class="post-footer-tag">Health Equity</span>
+    <span class="post-footer-tag">Participatory Methods</span>
+    <span class="post-footer-tag">Autism</span>
+    <span class="post-footer-tag">Disability Inclusion</span>
+    <span class="post-footer-tag">Medicaid</span>
+  </div>
+  <div class="post-nav">
+    <a href="../blog.html">&larr; Back to all posts</a>
+  </div>
 </div>
 
-<footer>
-  © 2026 Vijay Vasudevan
+</main>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container fade-in">
+    <h2>Want to Continue This Conversation?</h2>
+    <p>I welcome collaboration, commentary, and respectful disagreement on this topic.</p>
+    <a href="../contact.html" class="btn btn-primary">Get in Touch &rarr;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Vijay Vasudevan, Ph.D., M.P.H.</span>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../research.html">Research</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../grants.html">Grants</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/vijay-vasudevan-phd/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
+<script src="../main.js"></script>
 </body>
 </html>
