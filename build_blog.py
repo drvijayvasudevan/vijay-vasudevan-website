@@ -100,10 +100,12 @@ def parse_post(filepath: Path) -> dict | None:
 def tag_class(tag_text: str) -> str:
     """Map a tag label to its CSS modifier class."""
     t = tag_text.lower()
-    if any(w in t for w in ["data", "research", "epidem", "statistic", "autism", "mental health", "medicaid"]):
+    if any(w in t for w in ["data", "research", "epidem", "statistic", "autism", "mental health",
+                             "medicaid", "care coordination", "early intervention"]):
         return "blog-tag--data"
     if any(w in t for w in ["field", "update", "advocacy", "disability", "voting", "policy",
-                             "rights", "equity", "florida", "employment"]):
+                             "rights", "equity", "florida", "employment", "caregiver", "work",
+                             "health equity"]):
         return "blog-tag--field"
     return "blog-tag--guide"
 
