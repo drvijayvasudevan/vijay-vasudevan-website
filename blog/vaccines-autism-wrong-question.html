@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SJX97K22GY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SJX97K22GY');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Monday's executive order revives a question that was settled twenty-five years ago. The more useful questions — what vaccines actually prevent, and who pays when they aren't given — both run through a single signature at the CDC.">
+<title>The Vaccine Executive Order Asks the Wrong Question | Blog | Vijay Vasudevan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../blog.css">
+
+<!-- Post-specific extras (figures, callout, source list) -->
+<style>
+  /* ── Body elements blog.css doesn't cover ── */
+  .post-body a {
+    color: var(--teal-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+  }
+  .post-body a:hover { color: var(--teal-text); }
+
+  .post-body ul {
+    list-style: disc;
+    padding-left: 1.4rem;
+    margin: 0 0 1.5rem;
+  }
+  .post-body ul li {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--text-body);
+    margin-bottom: 0.6rem;
+  }
+  .post-body strong { color: var(--text-primary); font-weight: 600; }
+
+  .post-body hr {
+    border: 0;
+    border-top: 1px solid var(--border-light);
+    margin: 3rem 0 2rem;
+  }
+
+  /* ── Figures ── */
+  .post-figure {
+    margin: 2.75rem 0;
+    width: min(100%, 840px);
+  }
+  @media (min-width: 900px) {
+    .post-figure {
+      width: 840px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .post-figure .figure-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .post-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+  @media (max-width: 640px) {
+    .post-figure .figure-scroll svg { min-width: 640px; }
+    .post-figure .scroll-hint { display: block; }
+  }
+  .post-figure .scroll-hint {
+    display: none;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  .post-figure figcaption {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-top: 0.9rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--gold-decorative);
+  }
+  .post-figure figcaption b { color: var(--text-primary); font-weight: 600; }
+
+  /* ── Callout ── */
+  .callout {
+    background: var(--cream-mid);
+    border-left: 3px solid var(--gold-decorative);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .callout p { margin-bottom: 0 !important; font-size: 1rem !important; }
+  .callout p + p { margin-top: 0.85rem !important; }
+
+  /* ── Sources ── */
+  .post-sources h2 { font-size: 1.15rem !important; }
+  .post-sources ul { list-style: none; padding-left: 0; }
+  .post-sources li {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    padding-left: 1.1rem;
+    text-indent: -1.1rem;
+    margin-bottom: 0.65rem;
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" role="navigation" aria-label="Main">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Vijay Vasudevan — Home">
+      <span class="nav-brand-name">Vijay Vasudevan</span>
+      <span class="nav-brand-sub">Public Health &amp; Data Science</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="/">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../research.html">Research</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../grants.html">Grants</a>
+      <a href="../leadership.html">Leadership</a>
+      <a href="../contact.html" class="nav-cta-link">Get in Touch →</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- POST HEADER -->
+<header class="post-header">
+  <div class="container">
+    <div class="post-meta-top">
+      <span class="post-tag">Autism</span>
+      <span class="post-tag">Policy</span>
+      <span class="post-tag">Vaccines</span>
+      <span class="post-tag">RFK</span>
+      <span class="post-meta-date">August 11, 2026</span>
+    </div>
+    <h1>The Vaccine Executive Order Asks the Wrong Question</h1>
+    <div class="post-meta-bottom">
+      <div class="post-author">
+        <div class="post-author-avatar">VV</div>
+        <span class="post-author-name">Vijay Vasudevan, Ph.D., M.P.H.</span>
+      </div>
+      <span>9 min read</span>
+    </div>
+  </div>
+</header>
+
+<!-- POST BODY -->
+<article class="post-body fade-in">
+
+  <p>On Monday afternoon, in the Oval Office, President Trump signed an executive order that would reshape how American children are vaccinated. Flanked by Health Secretary Robert F. Kennedy Jr. and NIH Director Jay Bhattacharya, he framed it as a correction — a return to a simpler, healthier era before the childhood schedule ballooned. And repeatedly, he tied it to autism.</p>
+
+  <p>Most of the coverage since has been spent, once again, explaining that vaccines do not cause autism. That is true. It has been true for twenty-five years. But I want to argue that the constant relitigating of a settled negative is itself the victory: as long as the public conversation is stuck on what vaccines <em>don't</em> do, we never get to what they <em>do</em> — or to the question of who pays when they aren't given.</p>
+
+  <h2>What the order actually does</h2>
+
+  <p>Three things, mainly.</p>
+
+  <p>It calls for cutting the number of federally recommended childhood vaccines and sorting the remainder into tiers — some recommended for every child, others only for children considered high-risk. RSV and hepatitis A and B shots fall into that second category. This builds on an HHS scientific assessment from December 2025 that proposed trimming the list from seventeen recommended vaccines to eleven, reasoning that peer countries such as Denmark recommend fewer.</p>
+
+  <p>It calls for breaking up the MMR combination shot into separate injections, and for spacing childhood vaccinations across separate visits where possible. Standalone versions of those shots are not currently sold in the United States.</p>
+
+  <p>And it directs the Justice Department to pressure states to reduce the number of vaccines required for school attendance — notable, because school entry requirements have always been a matter of state law.</p>
+
+  <p>The order itself reportedly does not mention autism. The president did, several times, at the signing.</p>
+
+  <h2>The negative, one last time</h2>
+
+  <p>The vaccine–autism hypothesis traces to a 1998 <em>Lancet</em> paper by Andrew Wakefield involving twelve children. It was retracted in 2010. Wakefield lost his medical license after Britain's General Medical Council found he had acted dishonestly and had undisclosed financial conflicts.</p>
+
+  <p>What followed is one of the most thorough negative findings in modern epidemiology.</p>
+
+  <figure class="post-figure">
+    <div class="figure-scroll">
+<svg viewBox="0 0 800 430" role="img" aria-labelledby="f1title f1desc" font-family="'DM Sans','Segoe UI',sans-serif">
+  <title id="f1title">The scale of the evidence on vaccines and autism</title>
+  <desc id="f1desc">Bar chart comparing study sizes. The 1998 Wakefield paper studied 12 children and was retracted. Three later studies finding no link studied 537,303 children (Denmark, 2002), 657,461 children (Denmark, 2019), and 1,266,327 children (a ten-study meta-analysis, 2014), totaling roughly 2.4 million children.</desc>
+  <rect width="800" height="430" fill="#f8f5f0"/>
+  <rect x="0" y="0" width="800" height="4" fill="#c5993e"/>
+  <text x="40" y="52" font-family="'Newsreader',Georgia,serif" font-size="25" font-weight="600" fill="#0c1d2f">The weight of the evidence</text>
+  <text x="40" y="78" font-size="14" fill="#5c6372">Number of children studied. Bars drawn to the same scale.</text>
+  <text x="40" y="128" font-size="14" font-weight="600" fill="#0c1d2f">Wakefield, 1998</text>
+  <text x="40" y="147" font-size="12" fill="#5c6372">Claimed a link · retracted 2010</text>
+  <rect x="270" y="118" width="3" height="26" fill="#d9735b"/>
+  <text x="286" y="136" font-size="14" font-weight="700" fill="#c0563d">12 children</text>
+  <text x="378" y="136" font-size="12" fill="#5c6372">← the bar is 3 pixels wide</text>
+  <line x1="40" y1="170" x2="760" y2="170" stroke="#e6dfd4" stroke-width="1"/>
+  <text x="40" y="196" font-size="12" font-weight="600" fill="#217d72" letter-spacing="0.06em">STUDIES FINDING NO LINK</text>
+  <text x="40" y="232" font-size="14" font-weight="600" fill="#0c1d2f">Denmark, 2002</text>
+  <rect x="270" y="216" width="238" height="26" rx="3" fill="#2a9d8f"/>
+  <text x="518" y="234" font-size="14" font-weight="600" fill="#0c1d2f">537,303</text>
+  <text x="40" y="278" font-size="14" font-weight="600" fill="#0c1d2f">Denmark, 2019</text>
+  <rect x="270" y="262" width="291" height="26" rx="3" fill="#2a9d8f"/>
+  <text x="571" y="280" font-size="14" font-weight="600" fill="#0c1d2f">657,461</text>
+  <text x="40" y="324" font-size="14" font-weight="600" fill="#0c1d2f">Meta-analysis, 2014</text>
+  <text x="40" y="342" font-size="12" fill="#5c6372">ten studies pooled</text>
+  <rect x="270" y="308" width="440" height="26" rx="3" fill="#1a6b61"/>
+  <text x="280" y="326" font-size="14" font-weight="600" fill="#ffffff">1,266,327</text>
+  <line x1="40" y1="366" x2="760" y2="366" stroke="#e6dfd4" stroke-width="1"/>
+  <text x="40" y="396" font-family="'Newsreader',Georgia,serif" font-size="16" fill="#0c1d2f">Roughly <tspan font-weight="700">2.4 million children</tspan> studied. No causal link found.</text>
+  <text x="40" y="416" font-size="11" fill="#5c6372">Sources: Madsen et al. 2002; Hviid et al. 2019; Taylor et al. 2014. Wakefield et al. 1998, retracted by The Lancet in 2010.</text>
+</svg>
+    </div>
+    <p class="scroll-hint">Scroll figure horizontally to view.</p>
+    <figcaption><b>Figure 1.</b> The paper that started this studied twelve children and was withdrawn. The studies that went looking and found nothing have examined roughly 2.4 million.</figcaption>
+  </figure>
+
+  <p>A Danish cohort of 537,303 children in 2002 found no difference in autism rates between vaccinated and unvaccinated children. A 2019 follow-up of 657,461 children reached the same conclusion, and specifically tested whether MMR raised risk among children with autistic siblings or other risk factors — it did not. A 2014 meta-analysis pooled more than 1.2 million children across ten studies and found no association with MMR, with thimerosal, or with mercury exposure. When thimerosal was removed from U.S. childhood vaccines by 2001, diagnoses kept climbing. A 2013 CDC study tested the "too many too soon" idea directly by counting total antigens received in the first two years; children with autism had received no more than children without. The Institute of Medicine reviewed the question in 2004 and again in 2011 and rejected a causal relationship both times.</p>
+
+  <p>Diagnoses are rising mostly because of who counts as autistic — widened diagnostic criteria, the DSM-5 consolidation of Asperger's and PDD-NOS into a single spectrum, better screening, and the recognition of autistic girls, adults, and people with average or high IQs who were previously missed entirely. Twin and sibling studies place heritability somewhere around 80 percent. Autism is largely determined before a child receives a first vaccine.</p>
+
+  <p>That is the whole answer, and it has been the whole answer for a long time. I would suggest we stop treating each new demand to re-answer it as a scientific question, because it isn't one. These studies keep getting commissioned not because the evidence is unsettled, but because the politics are.</p>
+
+  <div class="callout">
+    <p><strong>To be clear: safety surveillance should not stop.</strong> VAERS, the Vaccine Safety Datalink, and post-licensure monitoring are precisely why the evidence base is trustworthy in the first place.</p>
+    <p>The argument here is not for less scrutiny. It is that "does X cause Y" has been asked and answered, while a more useful question has been starved of airtime.</p>
+  </div>
+
+  <h2>The better question: what do vaccines actually do?</h2>
+
+  <p>Here is what the affirmative literature says — and notice how little of it is about whether you catch something. It is about how badly it goes.</p>
+
+  <figure class="post-figure">
+    <div class="figure-scroll">
+<svg viewBox="0 0 800 400" role="img" aria-labelledby="f2title f2desc" font-family="'DM Sans','Segoe UI',sans-serif">
+  <title id="f2title">What routine childhood vaccination prevents</title>
+  <desc id="f2desc">Among United States children born from 1994 through 2023, CDC modeling estimates routine childhood vaccination will prevent about 508 million lifetime illnesses, 32 million hospitalizations, and 1,129,000 deaths, with net savings of 540 billion dollars in direct costs and 2.7 trillion dollars in societal costs — about eleven dollars saved for every dollar spent.</desc>
+  <rect width="800" height="400" fill="#0c1d2f"/>
+  <rect x="0" y="0" width="800" height="4" fill="#c5993e"/>
+  <text x="40" y="54" font-family="'Newsreader',Georgia,serif" font-size="25" font-weight="600" fill="#ffffff">The better question: what do vaccines do?</text>
+  <text x="40" y="80" font-size="14" fill="#a8b4c4">Projected lifetime outcomes prevented among U.S. children born 1994–2023.</text>
+  <line x1="40" y1="104" x2="760" y2="104" stroke="#1a3a56" stroke-width="1"/>
+  <text x="40" y="164" font-family="'Newsreader',Georgia,serif" font-size="44" font-weight="700" fill="#3dbcad">508M</text>
+  <text x="40" y="188" font-size="13" fill="#ffffff" font-weight="600">illnesses prevented</text>
+  <text x="290" y="164" font-family="'Newsreader',Georgia,serif" font-size="44" font-weight="700" fill="#c5993e">32M</text>
+  <text x="290" y="188" font-size="13" fill="#ffffff" font-weight="600">hospitalizations prevented</text>
+  <text x="290" y="207" font-size="12" fill="#a8b4c4">the number this debate never mentions</text>
+  <text x="590" y="164" font-family="'Newsreader',Georgia,serif" font-size="44" font-weight="700" fill="#3dbcad">1.13M</text>
+  <text x="590" y="188" font-size="13" fill="#ffffff" font-weight="600">deaths prevented</text>
+  <line x1="40" y1="240" x2="760" y2="240" stroke="#1a3a56" stroke-width="1"/>
+  <rect x="40" y="268" width="340" height="86" rx="8" fill="#142c42"/>
+  <text x="62" y="304" font-family="'Newsreader',Georgia,serif" font-size="30" font-weight="700" fill="#ffffff">$2.7 trillion</text>
+  <text x="62" y="328" font-size="13" fill="#a8b4c4">net societal savings</text>
+  <rect x="400" y="268" width="360" height="86" rx="8" fill="#142c42"/>
+  <text x="422" y="304" font-family="'Newsreader',Georgia,serif" font-size="30" font-weight="700" fill="#c5993e">$11 saved : $1 spent</text>
+  <text x="422" y="328" font-size="13" fill="#a8b4c4">return on routine childhood immunization</text>
+  <text x="40" y="382" font-size="11" fill="#7d90a6">Source: Zhou et al., MMWR 73(31), Aug. 8, 2024 — Vaccines for Children program era, 1994–2023.</text>
+</svg>
+    </div>
+    <p class="scroll-hint">Scroll figure horizontally to view.</p>
+    <figcaption><b>Figure 2.</b> The affirmative case is also the economic case. Thirty-two million hospitalizations is a health number and a premium number at the same time.</figcaption>
+  </figure>
+
+  <p>Thirty-two million hospitalizations. That is the figure that belongs in this conversation, and it is about money as much as about health.</p>
+
+  <p>The mechanism matters too, and it is the part parents almost never hear. Vaccines are not binary. The measles shot comes close — roughly 97 percent effective with two doses. But for influenza and COVID, protection against <em>infection</em> is genuinely partial and varies by season and strain match, while protection against <em>severe outcomes</em> holds up far better. That is the honest framing, and it is more persuasive than overclaiming: you may still get sick, and you are substantially less likely to end up on oxygen, in an ICU bed, or out of work for three weeks.</p>
+
+  <p>Which is exactly the claim a shrinking schedule puts at risk — and exactly where the money is.</p>
+
+  <h2>Who pays</h2>
+
+  <p>The Vaccines for Children program exists because of an epidemic caused by cost. Congress created VFC in 1994 in response to a measles resurgence during 1989–1991 that produced roughly 55,000 cases — a resurgence driven largely by the failure to vaccinate uninsured children at the recommended age. The lesson was that when vaccination carries a price at the point of care, coverage falls and outbreaks follow.</p>
+
+  <p>That lesson is directly relevant to Monday's order, and here is the part that has received almost no attention.</p>
+
+  <p>An executive order can direct, but it cannot itself change the childhood schedule. The schedule becomes official when the CDC director adopts a recommendation from the Advisory Committee on Immunization Practices. Under current law that signature is a hinge with two functions: it sets the clinical standard, and it triggers the money — the requirement that private insurers cover the vaccine with no cost sharing, and eligibility under VFC, which reaches a little over half of American children.</p>
+
+  <figure class="post-figure">
+    <div class="figure-scroll">
+<svg viewBox="0 0 800 500" role="img" aria-labelledby="f3title f3desc" font-family="'DM Sans','Segoe UI',sans-serif">
+  <title id="f3title">Why the CDC director's signature controls both the schedule and the cost</title>
+  <desc id="f3desc">Flow diagram. An executive order directs a change to the childhood vaccine schedule, from seventeen recommended vaccines to eleven. The Advisory Committee on Immunization Practices must issue a recommendation, currently stalled by litigation over member qualifications. The CDC director must then adopt it. That single signature does two things: it sets the schedule clinicians follow, and it triggers no-cost insurance coverage plus Vaccines for Children eligibility, covering about half of American children. Vaccines dropped from the recommended list may therefore stop being free at the point of care.</desc>
+  <rect width="800" height="500" fill="#f8f5f0"/>
+  <rect x="0" y="0" width="800" height="4" fill="#c5993e"/>
+  <text x="40" y="52" font-family="'Newsreader',Georgia,serif" font-size="25" font-weight="600" fill="#0c1d2f">One signature, two consequences</text>
+  <text x="40" y="78" font-size="14" fill="#5c6372">An executive order can direct a change. It cannot make one.</text>
+  <defs>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#5c6372"/>
+    </marker>
+  </defs>
+  <rect x="230" y="104" width="340" height="58" rx="8" fill="#ffffff" stroke="#e6dfd4"/>
+  <text x="400" y="130" font-size="14" font-weight="600" fill="#0c1d2f" text-anchor="middle">Executive order, Aug. 10, 2026</text>
+  <text x="400" y="150" font-size="13" fill="#5c6372" text-anchor="middle">directs the schedule to shrink: 17 recommended → 11</text>
+  <line x1="400" y1="162" x2="400" y2="188" stroke="#5c6372" stroke-width="1.5" marker-end="url(#arw)"/>
+  <rect x="230" y="192" width="340" height="58" rx="8" fill="#ffffff" stroke="#e6dfd4"/>
+  <text x="400" y="218" font-size="14" font-weight="600" fill="#0c1d2f" text-anchor="middle">ACIP must issue a recommendation</text>
+  <text x="400" y="238" font-size="13" fill="#5c6372" text-anchor="middle">currently stalled by litigation over member qualifications</text>
+  <line x1="400" y1="250" x2="400" y2="276" stroke="#5c6372" stroke-width="1.5" marker-end="url(#arw)"/>
+  <rect x="200" y="280" width="400" height="66" rx="8" fill="#0c1d2f"/>
+  <rect x="200" y="280" width="400" height="66" rx="8" fill="none" stroke="#c5993e" stroke-width="2"/>
+  <text x="400" y="308" font-family="'Newsreader',Georgia,serif" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">The CDC director adopts it</text>
+  <text x="400" y="330" font-size="13" fill="#c5993e" text-anchor="middle">Dr. Erica Schwartz, confirmed Aug. 5, 2026</text>
+  <path d="M330,346 L330,372 L200,372 L200,396" fill="none" stroke="#5c6372" stroke-width="1.5" marker-end="url(#arw)"/>
+  <path d="M470,346 L470,372 L600,372 L600,396" fill="none" stroke="#5c6372" stroke-width="1.5" marker-end="url(#arw)"/>
+  <rect x="40" y="400" width="320" height="72" rx="8" fill="#ffffff" stroke="#e6dfd4"/>
+  <text x="60" y="426" font-size="14" font-weight="600" fill="#0c1d2f">The clinical standard</text>
+  <text x="60" y="447" font-size="13" fill="#5c6372">What the schedule says, and what</text>
+  <text x="60" y="464" font-size="13" fill="#5c6372">pediatricians are expected to follow.</text>
+  <rect x="440" y="400" width="320" height="72" rx="8" fill="#ffffff" stroke="#d9735b" stroke-width="2"/>
+  <text x="460" y="426" font-size="14" font-weight="600" fill="#0c1d2f">The money</text>
+  <text x="460" y="447" font-size="13" fill="#5c6372">No-cost insurance coverage and VFC</text>
+  <text x="460" y="464" font-size="13" fill="#5c6372">eligibility — about half of U.S. children.</text>
+  <text x="400" y="492" font-size="12" font-style="italic" fill="#b0503a" text-anchor="middle">Drop a vaccine from the list and it may stop being free at the counter.</text>
+</svg>
+    </div>
+    <p class="scroll-hint">Scroll figure horizontally to view.</p>
+    <figcaption><b>Figure 3.</b> Why the director's signature is the whole story: it sets the clinical standard and triggers first-dollar coverage in the same stroke.</figcaption>
+  </figure>
+
+  <p>So if the recommended list contracts from seventeen to eleven, six vaccines do not merely become optional. They plausibly stop being free at the pharmacy counter. Families who still want them — and most will — could face a copay where they previously faced none. The families who feel that copay first are precisely the ones VFC was built to protect.</p>
+
+  <p>The cost logic runs in the other direction too. Preventable hospitalizations are not a private expense. During the delta surge, KFF estimated 690,000 vaccine-preventable COVID hospitalizations and $13.8 billion in preventable costs over six months. That money is paid by taxpayers and by everyone else's premiums. Vaccine-preventable disease is one of the few remaining places in American health care where a cheap intervention reliably prevents an expensive one — and this order makes the cheap intervention harder to get while doing nothing about the expensive one.</p>
+
+  <p>It is worth being clear about what follows from that and what does not. The frustration is legitimate: shared premiums fund avoidable admissions. But the fix is not penalizing families after the fact. Federal law already bars insurers from rating on vaccination status; effectiveness against infection is too variable across flu and COVID seasons to adjudicate fairly; and a large share of the unvaccinated are people facing access barriers rather than people holding convictions. Penalizing them would also hand the anti-vaccine movement its single most effective story — that public health coerces. The cost argument is better used to defend first-dollar coverage than to build a surcharge.</p>
+
+  <h2>Where the CDC director comes in</h2>
+
+  <p>For nearly a year there was no confirmed CDC director to sign anything. That changed five days before the order. On August 5, the Senate confirmed Dr. Erica Schwartz by a vote of 51 to 44 — a retired rear admiral, former deputy surgeon general, physician and lawyer, and the first Black woman to lead the agency.</p>
+
+  <p>She inherits a difficult position, and the recent history explains why. Her predecessor, Susan Monarez, lasted twenty-nine days. Monarez later testified to Congress that Kennedy had pressured her to approve vaccine policy changes without reviewing the scientific evidence. At her own confirmation hearing in July, Schwartz pledged to follow the science wherever it led, but did not directly answer whether she would refuse an instruction she believed contradicted the evidence. Senators noticed.</p>
+
+  <p>Her confirmation was itself entangled with this dispute. Senator Bill Cassidy — a physician who chairs the Senate health committee — released his hold after HHS revised the CDC's autism-and-vaccines webpage, calling the change a gesture of good faith. That page had been rewritten in late 2025 at Kennedy's direction to assert that the statement "vaccines do not cause autism" was not evidence-based; the July revision replaced that with language about scientists not having identified autism's root causes. Critics noted the page still cites a 2010 hepatitis B study that was retracted in May after an independent statistical review found its conclusions unsound.</p>
+
+  <p>Cassidy's response to Monday's order was unambiguous. He called it wrong, said the president lacks the expertise to make these changes, stated that vaccines are safe, effective, and do not cause autism, and warned that breaking up combination shots means more needles for the same protection — not fewer.</p>
+
+  <h2>What happens next</h2>
+
+  <p>Probably a courtroom. A federal judge has already nullified ACIP's decisions after finding that several of Kennedy's hand-picked members lacked vaccine expertise and did not qualify under the committee's charter. It remains unclear when a reconstituted ACIP will meet — and without it, the formal machinery for changing the schedule is stalled regardless of what an executive order says.</p>
+
+  <p>Meanwhile, the United States is in its worst measles year in thirty-five years.</p>
+
+  <p>Which returns us to 1989. That resurgence was not caused by a debate about autism. It was caused by children who did not get a shot because of what it cost and where they lived. We built VFC to fix that, and it worked — thirty-two million hospitalizations' worth of working. The risk in this order is not that it will convince parents vaccines cause autism; most parents already do not believe that. The risk is that it quietly removes six vaccines from the list that makes them free, at the exact moment measles is back.</p>
+
+  <blockquote>Stop asking what vaccines don't do. Ask what they prevent — and who pays when they aren't given.</blockquote>
+
+  <p>If you are a parent reading coverage of Monday's order and feeling uncertain: your pediatrician is still the right person to ask, and the recommendations of the American Academy of Pediatrics have not changed.</p>
+
+  <hr>
+
+  <div class="post-sources">
+    <h2>Sources</h2>
+    <ul>
+      <li>Stein, R. "Trump and RFK Jr. try again to upend vaccines for kids." <em>NPR</em>, August 10, 2026. Additional signing coverage from CBS News, CNN, CNBC, ABC News, and STAT.</li>
+      <li>"Dr. Erica Schwartz confirmed as CDC director, filling a leadership vacuum." <em>NPR</em>, August 5, 2026; STAT News, August 5, 2026.</li>
+      <li>Sun, L. H. "Cassidy shifts on CDC nominee, citing change to disputed autism page." <em>Washington Post</em>, July 23, 2026; CNN, July 23, 2026; NOTUS, July 24, 2026.</li>
+      <li>"Trump executive order directs CDC to 'realign' childhood vaccine recommendations." <em>CIDRAP</em>, University of Minnesota.</li>
+      <li>Zhou, F., et al. "Health and Economic Benefits of Routine Childhood Immunizations in the Era of the Vaccines for Children Program — United States, 1994–2023." <em>MMWR</em> 73(31), August 8, 2024.</li>
+      <li>Whitney, C. G., et al. "Benefits from Immunization During the Vaccines for Children Program Era — United States, 1994–2013." <em>MMWR</em> 63(16), April 25, 2014.</li>
+      <li>Amin, K., and Cox, C. "Unvaccinated COVID-19 hospitalizations cost billions of dollars." Peterson-KFF Health System Tracker.</li>
+      <li>Madsen, K. M., et al. <em>New England Journal of Medicine</em>, 2002; Hviid, A., et al. <em>Annals of Internal Medicine</em>, 2019; Taylor, L. E., et al. <em>Vaccine</em>, 2014; DeStefano, F., et al. <em>Journal of Pediatrics</em>, 2013; Institute of Medicine immunization safety reviews, 2004 and 2011.</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- POST FOOTER -->
+<div class="post-footer fade-in">
+  <div class="post-footer-tags">
+    <span class="post-footer-tag">Autism</span>
+    <span class="post-footer-tag">Policy</span>
+    <span class="post-footer-tag">Equity</span>
+    <span class="post-footer-tag">Vaccines</span>
+    <span class="post-footer-tag">RFK</span>
+  </div>
+  <div class="post-nav">
+    <a href="../blog.html">← Back to all posts</a>
+  </div>
+</div>
+
+</main>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container fade-in">
+    <h2>Want to Discuss This Further?</h2>
+    <p>I welcome collaboration on autism research, data science, and program evaluation.</p>
+    <a href="../contact.html" class="btn btn-primary">Get in Touch →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Vijay Vasudevan, Ph.D., M.P.H.</span>
+      <div class="footer-links">
+        <a href="../about.html">About</a>
+        <a href="../research.html">Research</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../grants.html">Grants</a>
+        <a href="../contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/vijay-vasudevan-phd/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../main.js"></script>
+</body>
+</html>
