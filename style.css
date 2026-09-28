@@ -120,6 +120,11 @@ ul, ol { list-style: none; }
   color: var(--teal-light);
 }
 
+/* VV logo beside the name */
+.nav-brand--logo { flex-direction: row; align-items: center; gap: 0.75rem; }
+.nav-brand-logo { height: 30px; width: auto; flex-shrink: 0; }
+.nav-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+
 /* Links */
 .nav-menu {
   display: flex;
@@ -860,6 +865,9 @@ ul, ol { list-style: none; }
 }
 
 .footer-copy { font-size: 0.78rem; }
+
+.footer-brand { display: flex; align-items: center; gap: 0.75rem; }
+.footer-logo { height: 22px; width: auto; flex-shrink: 0; }
 
 .footer-links {
   display: flex; gap: 1.5rem;
