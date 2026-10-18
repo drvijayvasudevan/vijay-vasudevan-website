@@ -1411,3 +1411,81 @@ a[target="_blank"]::after {
     display: none !important;
   }
 }
+
+/* ══════════════════════════════
+   VIDEOS PAGE
+   ══════════════════════════════ */
+.video-hero-actions { margin-top: 1.5rem; opacity: 0; animation: riseIn 0.5s 0.46s forwards; }
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.video-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--navy);
+}
+.video-frame iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+.video-body { padding: 1.35rem 1.6rem 1.5rem; }
+
+.video-meta {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal-text);
+  margin-bottom: 0.4rem;
+}
+
+.video-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem; font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4; margin-bottom: 0.5rem;
+}
+
+.video-desc { font-size: 0.92rem; margin-bottom: 0.25rem; }
+
+.video-format {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.video-format h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem; font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35; margin-bottom: 0.4rem;
+}
+.video-format p { font-size: 0.9rem; }
+.video-format-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem; font-weight: 700;
+  color: var(--gold-decorative);
+  line-height: 1; margin-bottom: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .video-grid { grid-template-columns: 1fr; }
+  .video-format { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .video-format { grid-template-columns: 1fr; }
+}
+
+/* Keep the 9-item menu on one line on tablet/small laptop widths */
+@media (min-width: 769px) and (max-width: 1120px) {
+  .nav-menu a { padding: 0.45rem 0.6rem; }
+  .nav-menu a::after { left: 0.6rem; right: 0.6rem; }
+}
